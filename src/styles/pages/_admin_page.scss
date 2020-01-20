@@ -1,0 +1,62 @@
+.admin-page {
+  color: $font-color-dark;
+  width: 100rem;
+  margin: 0 auto;
+
+  .card-admin-menus {
+    margin-bottom: 2rem;
+  }
+
+  .card-content-admin-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .item-link-admin {
+    border-radius: .2rem;
+    color: $font-color-dark;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 1.2rem;
+    }
+
+    &:hover {
+      color: $font-color-dark;
+      padding: 1.1rem;
+    }
+
+  }
+
+  .item-link-admin-color-green {
+    &:hover {
+      border: .1rem solid $color-green;
+      background-color: $color-green-light;
+    }
+  }
+
+  .item-link-admin-color-purple {
+    &:hover {
+      border: .1rem solid $color-purple;
+      background-color: $color-purple-light;
+    }
+  }
+
+  .item-link-admin-color-blue {
+    &:hover {
+      border: .1rem solid $color-blue;
+      background-color: $color-blue-light;
+    }
+  }
+
+  .item-link-admin-color-orange {
+    &:hover {
+      border: .1rem solid $color-orange;
+      background-color: $color-orange-light;
+    }
+  }
+
+}

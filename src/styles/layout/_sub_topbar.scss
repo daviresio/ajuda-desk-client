@@ -1,0 +1,22 @@
+.subtopbar {
+  height: $subtopbar-height;
+  background-color: $subtopbar-color;
+  border-top: .1rem solid $color-primary-dark;
+  border-bottom: .1rem solid #dee2e6;
+  width: calc(100% - #{$navbar-width});
+  position: fixed;
+  top: $topbar-height;
+  left: $navbar-width;
+  z-index: 10;
+  padding: 2rem 3rem;
+  font-size: 1.2rem;
+
+  .fas {
+    margin-left: .5rem;
+  }
+
+  .grupos {
+    cursor: pointer;
+  }
+
+}

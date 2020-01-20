@@ -1,0 +1,51 @@
+.topbar {
+  height: $topbar-height;
+  background-color: $topbar-color;
+  width: calc(100% - #{$navbar-width});
+  position: fixed;
+  top: 0;
+  left: $navbar-width;
+  z-index: 10;
+  padding: 1.5rem 2rem;
+  color: $font-color-dark;
+
+  .paineis {
+    display: flex;
+    align-items: center;
+
+    .button-container {
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: .4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+
+      &:hover {
+        background-color: $color-primary;
+      }
+
+      i {
+        font-size: 1.6rem;
+      }
+
+    }
+  }
+
+  .opcoes {
+    display: flex;
+    align-items: center;
+
+    & > i, .user-box {
+      cursor: pointer;
+    }
+
+    i {
+      margin-right: 1.5rem;
+    }
+
+  }
+
+}

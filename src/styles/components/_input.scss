@@ -1,0 +1,23 @@
+.input {
+  width: 100%;
+  outline: none;
+  padding: 1rem;
+  border: .1rem solid $color-primary-dark-2;
+  border-radius: .2rem;
+  @include transition;
+
+  &:hover {
+    border: .1rem solid $color-blue;
+    @include transition;
+  }
+
+  &:focus {
+    border: .2rem solid $color-blue;
+    @include transition;
+  }
+
+  &-rounded {
+    border-radius: .6rem;
+  }
+
+}

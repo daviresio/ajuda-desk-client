@@ -1,0 +1,53 @@
+.nav {
+  width: $navbar-width;
+  background-color: $navbar-color;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  .logo-container {
+    background-color: $navbar-logo-color;
+    height: $topbar-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 4rem;
+      margin-right: 1rem;
+    }
+
+  }
+
+
+  .itens {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+
+
+      .nav-item {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        color: rgba($color-white, .7);
+        cursor: pointer;
+      }
+
+      .nav-item-active {
+        background-color: rgba($color-white, .3);
+        border-radius: .2rem;
+      }
+
+    }
+
+
+}
+

@@ -1,0 +1,85 @@
+.ticket {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: $font-color-dark;
+
+  .user-box {
+    margin: 0 1.5rem;
+  }
+
+  .title-content {
+    margin: .5rem 0;
+
+    .title {
+      font-size: 1.3rem;
+      margin-right: 1rem;
+    }
+
+    span:last-child {
+      color: $font-color;
+      font-weight: bold;
+    }
+
+  }
+
+  .detalhes {
+    color: $font-color;
+
+    .nome {
+      color: $font-color-dark;
+    }
+
+    i {
+      font-size: 1.3rem;
+      position: relative;
+      top: .2rem;
+      margin-right: .5rem;
+      color: $font-color-dark;
+    }
+
+  }
+
+  .acoes {
+    width: 25rem;
+    height: 5rem;
+    justify-content: space-between;
+
+.ticket-prioridade {
+
+  .prioridade-cor {
+    width: 1rem;
+    height: 1rem;
+    border-radius: .2rem;
+    margin-bottom: .2rem;
+
+    &-green {
+      background-color: $color-green;
+    }
+
+    &-blue {
+      background-color: $color-blue;
+    }
+
+    &-yellow {
+      background-color: $color-yellow;
+    }
+
+    &-red {
+      background-color: $color-red;
+    }
+
+  }
+
+}
+
+
+.ticket-status-icon {
+    font-size: 1rem;
+  margin-bottom: .3rem;
+}
+
+
+  }
+
+}

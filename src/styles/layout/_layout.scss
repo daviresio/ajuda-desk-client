@@ -1,0 +1,11 @@
+.layout {
+
+  .content {
+    position: relative;
+    width: calc(100% - #{$navbar-width});
+    top: calc(#{$topbar-height} + #{$subtopbar-height});
+    left: $navbar-width;
+    overflow: hidden;
+  }
+
+}

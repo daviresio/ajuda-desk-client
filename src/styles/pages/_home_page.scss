@@ -1,0 +1,90 @@
+.home {
+
+  .resumos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+
+
+  }
+
+  .card-principal {
+    height: 45rem;
+    display: grid;
+    grid-template-columns: 1fr 45rem;
+    grid-template-rows: auto;
+
+    .resumo-grafico {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+
+    .item {
+      border-left: .3rem solid rgba($font-color, .2);
+      padding-left: 1rem;
+      max-height: 10rem;
+    }
+
+  }
+
+  .relatorios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-top: 1rem;
+
+    .card-satisfacao {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 3rem;
+
+      .text-and-image {
+        width: 12rem;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 3.2rem;
+          margin-bottom: .6rem;
+          margin-left: 1rem;
+        }
+
+      }
+      .positive-border {
+        border-bottom: .4rem solid $color-green;
+        border-radius: .4rem;
+      }
+
+    }
+
+    .card-foruns {
+      display: grid;
+      grid-template-columns: 4rem 1fr;
+      grid-row-gap: 5rem;
+
+      img {
+        margin-top: .3rem;
+      }
+
+      .aguardando-icon {
+        width: 2.4rem;
+      }
+
+      .spam-icon {
+        width: 2rem;
+      }
+
+    }
+
+    .nenhuma-tarefa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 20rem;
+    }
+
+  }
+
+}

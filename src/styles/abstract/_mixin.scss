@@ -1,0 +1,15 @@
+@mixin boxshadowLight {
+  box-shadow: 0 0 .8rem -.3rem rgba(0,0,0,0.75);
+}
+
+@mixin boxshadowLightBottom {
+  box-shadow: 0 1rem .5rem -1rem rgba(0,0,0,0.75);
+}
+
+@mixin boxshadowColorPrimary {
+  box-shadow: 0 0 1.2rem .1rem $color-primary-dark-2;
+}
+
+@mixin transition {
+  transition: all .3s;
+}
