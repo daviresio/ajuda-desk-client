@@ -4,14 +4,15 @@ body {
   font-family: 'ABeeZee', sans-serif;
   font-weight: 300;
   line-height: 1.6;
-  color: $font-color;
+  color: $font-color-dark;
 
 }
 
 p {
-  font-size: 1.4rem;
-  line-height: 1.8;
-  text-align: justify;
+  color: $font-color-dark;
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
 }
 
 pre {
@@ -23,6 +24,12 @@ pre {
 
 }
 
+
+h1 {
+font-weight: normal;
+  font-size: 2rem;
+  color: $font-color-dark;
+}
 
 h2 {
   font-weight: normal;
@@ -38,7 +45,7 @@ h2 {
 }
 
 .text-deactive {
-  color: rgba($font-color, .4);
+  color: rgba($font-color-light, .4);
   @include transition;
 }
 

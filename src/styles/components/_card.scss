@@ -4,3 +4,20 @@
   padding: 2rem;
   border: .1rem solid $color-border-primary;
 }
+
+.card-com-header {
+  border: .2rem solid $color-primary-dark;
+
+  .card-header {
+    background-color: $color-primary;
+    padding: 2rem;
+
+  }
+
+  .card-body {
+    background-color: $color-white;
+    padding: 2rem;
+
+  }
+
+}

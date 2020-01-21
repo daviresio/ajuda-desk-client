@@ -3,6 +3,7 @@ $color-primary: #EBEFF3;
 $color-secundary: #F5F7F9;
 $color-primary-dark: #dee2e6;
 $color-primary-dark-2: #c5c8cc;
+$color-dark: #12344D;
 
 $color-white: #FFF;
 $color-green: #6BB437;
@@ -16,7 +17,7 @@ $color-yellow: #FFD013;
 $color-purple: #AE64CE;
 $color-purple-light: #f0daf9;
 
-$font-color: #6f7c87;
+$font-color-light: #6f7c87;
 $font-color-dark: #2a343f;
 
 $color-border-primary: rgba(#c8cccf, .5);
@@ -42,4 +43,9 @@ $card-border-color: rgba(0, 0, 0, .125);
 
 $footer-height: 20rem;
 $footer-color: rgba(0, 0, 0, .7);
+
+
+$topbars-height: calc(#{$topbar-height} + #{$subtopbar-height});
+
+$page-height: calc(98vh - #{$topbars-height});
 

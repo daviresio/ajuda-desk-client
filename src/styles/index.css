@@ -342,13 +342,14 @@ body {
   font-family: "ABeeZee", sans-serif;
   font-weight: 300;
   line-height: 1.6;
-  color: #6f7c87;
+  color: #2a343f;
 }
 
 p {
-  font-size: 1.4rem;
-  line-height: 1.8;
-  text-align: justify;
+  color: #2a343f;
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
 }
 
 pre {
@@ -356,6 +357,12 @@ pre {
 }
 pre code {
   font-size: 1.2rem;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 2rem;
+  color: #2a343f;
 }
 
 h2 {
@@ -400,11 +407,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #6f7c87;
+  color: #2a343f;
   font-size: 1.8rem;
 }
 a:hover {
-  color: rgba(111, 124, 135, 0.6);
+  color: rgba(42, 52, 63, 0.6);
 }
 
 span, div {
@@ -547,6 +554,24 @@ li {
   overflow: hidden;
 }
 
+.page-divided-with-second-content-scrolable {
+  display: grid;
+  grid-template-columns: 1fr 32rem;
+  grid-gap: 2rem;
+  min-height: calc(98vh - calc(6rem + 6rem));
+}
+.page-divided-with-second-content-scrolable .first-content {
+  min-height: calc(98vh - calc(6rem + 6rem));
+}
+.page-divided-with-second-content-scrolable .second-content {
+  overflow: auto;
+  max-height: calc(98vh - calc(6rem + 6rem));
+}
+
+.page-full-height {
+  min-height: calc(98vh - calc(6rem + 6rem));
+}
+
 .card {
   background-color: #FFF;
   border-radius: 0.4rem;
@@ -554,24 +579,108 @@ li {
   border: 0.1rem solid rgba(200, 204, 207, 0.5);
 }
 
-.input {
+.card-com-header {
+  border: 0.2rem solid #dee2e6;
+}
+.card-com-header .card-header {
+  background-color: #EBEFF3;
+  padding: 2rem;
+}
+.card-com-header .card-body {
+  background-color: #FFF;
+  padding: 2rem;
+}
+
+button {
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+  color: #FFF;
+}
+button i {
+  margin: 0 0.6rem;
+}
+
+.button-color-transparent {
+  background-color: transparent;
+  border: 0.1rem solid rgba(200, 204, 207, 0.8);
+  color: #6f7c87;
+}
+.button-color-transparent:hover {
+  background-color: rgba(200, 204, 207, 0.3);
+}
+.button-color-transparent:active {
+  color: rgba(111, 124, 135, 0.6);
+}
+.button-color-dark {
+  background-color: #12344D;
+}
+.button-color-dark:hover {
+  background-color: rgba(18, 52, 77, 0.9);
+}
+.button-color-dark:active {
+  background-color: rgba(18, 52, 77, 0.8);
+}
+
+.input-container label {
+  font-size: 1.35rem;
+  color: #2a343f;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.input-container .label-required::after {
+  content: "*";
+  color: #FF5959;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.input-container span {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #6f7c87;
+}
+.input-container .input {
   width: 100%;
   outline: none;
-  padding: 1rem;
+  padding: 1.1rem 1rem;
   border: 0.1rem solid #c5c8cc;
   border-radius: 0.2rem;
   transition: all 0.3s;
+  box-sizing: border-box;
 }
-.input:hover {
+.input-container .input:hover {
   border: 0.1rem solid #4DA1FF;
   transition: all 0.3s;
 }
-.input:focus {
+.input-container .input:focus {
   border: 0.2rem solid #4DA1FF;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   transition: all 0.3s;
 }
-.input-rounded {
+.input-container .input-rounded {
   border-radius: 0.6rem;
+}
+
+.input-pesquisa {
+  position: relative;
+}
+.input-pesquisa .input {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.input-pesquisa i {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.4rem;
+}
+.input-pesquisa .link {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.input-pesquisa .link:hover {
+  text-decoration: none;
 }
 
 .ticket {
@@ -877,6 +986,29 @@ li {
   background-color: #FFF6EF;
 }
 
+.configuracoes-email-page .input-pesquisa {
+  width: 50rem;
+}
+
+.cadastro-configuracoes-email-page .inputs-top {
+  width: 60rem;
+  margin-bottom: 4rem;
+}
+.cadastro-configuracoes-email-page .inputs-top > * {
+  margin-top: 2rem;
+}
+.cadastro-configuracoes-email-page .configuracao-servidor-email img {
+  margin-left: 1rem;
+  width: 1.4rem;
+}
+.cadastro-configuracoes-email-page .configuracao-servidor-email .radio-group {
+  display: flex;
+  margin-top: 2rem;
+}
+.cadastro-configuracoes-email-page .configuracao-servidor-email .radio-group .radio {
+  margin-left: 6rem;
+}
+
 .link-hover {
   cursor: pointer;
 }
@@ -897,6 +1029,9 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.row-no-space {
+  justify-content: stretch;
 }
 
 .column {
@@ -929,6 +1064,26 @@ li {
 
 .margin-bottom-5 {
   margin-bottom: 5rem;
+}
+
+.margin-right {
+  margin-right: 1rem;
+}
+
+.margin-right-2 {
+  margin-right: 2rem;
+}
+
+.margin-right-3 {
+  margin-right: 3rem;
+}
+
+.margin-right-4 {
+  margin-right: 4rem;
+}
+
+.margin-right-5 {
+  margin-right: 5rem;
 }
 
 /*# sourceMappingURL=index.css.map */

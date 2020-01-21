@@ -8,7 +8,9 @@ import EmpresasPage from "../pages/EmpresasPage";
 import SolucoesPage from "../pages/SolucoesPage";
 import BotsPage from "../pages/BotsPage";
 import AnalisesPage from "../pages/AnalisesPage";
-import AdminPage from "../pages/AdminPage";
+import AdminPage from "../pages/admin/AdminPage";
+import ConfiguracoesEmailPage from "../pages/admin/ConfiguracoesEmailPage";
+import CadastroConfiguracaoEmailPage from "../pages/admin/CadastroConfiguracaoEmailPage";
 
 const RoutesConfig = () => {
     return (
@@ -22,7 +24,9 @@ const RoutesConfig = () => {
                     <Route path={'/solucoes'} component={SolucoesPage}/>
                     <Route path={'/bots'} component={BotsPage}/>
                     <Route path={'/analises'} component={AnalisesPage}/>
-                    <Route path={'/admin'} component={AdminPage}/>
+                    <Route path={'/admin'} exact={true} component={AdminPage}/>
+                    <Route path={'/admin/email'} exact={true} component={ConfiguracoesEmailPage}/>
+                    <Route path={'/admin/email/cadastro'} component={CadastroConfiguracaoEmailPage}/>
                     <Redirect from={'/'} to={'/painel'} exact={true} />
                 </Switch>
             </Layout>

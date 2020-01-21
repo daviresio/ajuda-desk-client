@@ -1,23 +1,76 @@
-.input {
-  width: 100%;
-  outline: none;
-  padding: 1rem;
-  border: .1rem solid $color-primary-dark-2;
-  border-radius: .2rem;
-  @include transition;
+.input-container {
 
-  &:hover {
-    border: .1rem solid $color-blue;
-    @include transition;
+  label {
+    font-size: 1.35rem;
+    color: $font-color-dark;
+    display: inline-block;
+    margin-bottom: .5rem;
   }
 
-  &:focus {
-    border: .2rem solid $color-blue;
-    @include transition;
+  .label-required::after {
+    content: "*";
+    color: $color-red;
+    font-weight: bold;
+    font-size: 1.4rem;
   }
 
-  &-rounded {
-    border-radius: .6rem;
+  span {
+    display: inline-block;
+    margin-top: .5rem;
+    color: $font-color-light;
+  }
+
+  .input {
+    width: 100%;
+    outline: none;
+    padding: 1.1rem 1rem;
+    border: .1rem solid $color-primary-dark-2;
+    border-radius: .2rem;
+    @include transition;
+    box-sizing: border-box;
+
+    &:hover {
+      border: .1rem solid $color-blue;
+      @include transition;
+    }
+
+    &:focus {
+      border: .2rem solid $color-blue;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      @include transition;
+    }
+
+    &-rounded {
+      border-radius: .6rem;
+    }
+
+  }
+}
+
+.input-pesquisa {
+  position: relative;
+
+  .input {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  i {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.4rem;
+  }
+
+   .link {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+     &:hover {
+       text-decoration: none;
+     }
   }
 
 }

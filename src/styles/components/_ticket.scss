@@ -17,14 +17,14 @@
     }
 
     span:last-child {
-      color: $font-color;
+      color: $font-color-light;
       font-weight: bold;
     }
 
   }
 
   .detalhes {
-    color: $font-color;
+    color: $font-color-light;
 
     .nome {
       color: $font-color-dark;

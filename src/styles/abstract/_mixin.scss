@@ -13,3 +13,7 @@
 @mixin transition {
   transition: all .3s;
 }
+
+@mixin transition-big {
+  transition: all .5s;
+}

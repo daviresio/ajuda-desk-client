@@ -1,0 +1,38 @@
+.configuracoes-email-page {
+
+  .input-pesquisa {
+    width: 50rem;
+  }
+
+}
+.cadastro-configuracoes-email-page {
+
+  .inputs-top {
+    width: 60rem;
+    margin-bottom: 4rem;
+
+    & > * {
+      margin-top: 2rem;
+    }
+
+  }
+
+
+  .configuracao-servidor-email {
+
+    img {
+      margin-left: 1rem;
+      width: 1.4rem;
+    }
+
+    .radio-group {
+      display: flex;
+      margin-top: 2rem;
+     .radio {
+       margin-left: 6rem;
+     }
+    }
+
+  }
+
+}

@@ -5,7 +5,7 @@ import Column from "../Column";
 import Row from "../Row";
 import Icon from "../Icon";
 import TicketPrioridade from "./TicketPrioridade";
-import Card from "../Card";
+import Card from "../card/Card";
 import SelectCustomLabels from "./SelectCustomLabels";
 
 const options = [

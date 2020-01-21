@@ -1,0 +1,42 @@
+button {
+  padding: .8rem 1.2rem;
+  border-radius: .4rem;
+  color: $color-white;
+
+  i {
+    margin: 0 .6rem;
+  }
+
+}
+
+
+.button-color {
+  &-transparent {
+    background-color: transparent;
+    border: .1rem solid $color-border-primary-dark;
+    color: $font-color-light;
+
+    &:hover {
+      background-color: rgba($color-border-primary, .3);
+    }
+
+    &:active {
+      color: rgba($font-color-light, .6);
+    }
+
+  }
+
+  &-dark {
+    background-color: $color-dark;
+
+    &:hover {
+      background-color: rgba($color-dark, .9);
+    }
+
+    &:active {
+      background-color: rgba($color-dark, .8);
+    }
+
+  }
+
+}

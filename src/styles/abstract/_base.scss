@@ -18,11 +18,11 @@ body {
 
 a {
   text-decoration: none;
-  color: $font-color;
+  color: $font-color-dark;
   font-size: 1.8rem;
 
   &:hover {
-    color: rgba($font-color, .6);
+    color: rgba($font-color-dark, .6);
   }
 
 }
