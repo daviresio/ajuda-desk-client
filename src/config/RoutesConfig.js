@@ -28,6 +28,7 @@ const RoutesConfig = () => {
                     <Route path={'/admin/email'} exact={true} component={ConfiguracoesEmailPage}/>
                     <Route path={'/admin/email/cadastro'} component={CadastroConfiguracaoEmailPage}/>
                     <Redirect from={'/'} to={'/painel'} exact={true} />
+                    <Redirect from={'/index.html'} to={'/painel'} exact={true} />
                 </Switch>
             </Layout>
         </Router>

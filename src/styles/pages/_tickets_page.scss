@@ -1,22 +1,22 @@
 .tickets-page {
 
-  $filter-width: 30rem;
-  $top-size: calc(#{$topbar-height} + #{$subtopbar-height});
+  $filter-width: 35rem;
 
   .content-ticket-page {
     width: calc(100% - #{$filter-width});
-    min-height: calc(98vh - #{$top-size});
+    min-height: $page-height;
   }
 
   .filters {
     width: $filter-width;
-    height: calc(100vh - #{$top-size});
+    height: $page-height;
     position: fixed;
-    top: $top-size;
+    top: $topbars-height;
     right: 0;
     background-color: $color-primary;
     border-left: .1rem solid $color-border-primary-dark;
     padding: 2rem;
+    overflow: auto;
   }
 
 

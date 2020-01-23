@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Subtitle from "../components/Subtitle";
 import Ticket from "../components/ticket/Ticket";
-import MultiSelect from "../components/form/MultiSelect";
+import Select from "react-select";
+import {connect} from "react-redux";
+import {listGrupos} from "../store/sagas/api-data-saga";
+import {Field, Formik} from "formik";
+import SelectContainer from "../components/form/SelectContainer";
 
-const TicketsPage = () => {
+const TicketsPage = ({loadData}) => {
+
+    useEffect(() => {
+        loadData()
+    }, [])
+
     return (
         <div className={'tickets-page'}>
             <div className={'content-ticket-page'}>
@@ -14,19 +23,102 @@ const TicketsPage = () => {
             </div>
             <div className={'filters'}>
                 <Subtitle>Filtros</Subtitle>
-                <div>
-                    <label>Agentes</label>
-                    <MultiSelect options={[
-                        {label: 'Davi Resio', value: 1},
-                        {label: 'Daniele Bruna', value: 2},
-                        {label: 'Danilo', value: 3},
-                        {label: 'Daniel', value: 4},
-                        {label: 'nao atribuido', value: 5},
-                    ]} />
-                </div>
+
+                <Formik
+                    initialValues={{
+                        agentes: [],
+                        grupos: [],
+                        dataCriacao: null,
+                        resolucaoAte: [],
+                        primeiraRespostaAte: [],
+                        status: [],
+                        prioridade: [],
+                        tipo: [],
+                        origem: [],
+                        tags: [],
+                        empresas: [],
+                        inicioCompromisso: [],
+                        fimCompromisso: [],
+                    }}
+
+                    onSubmit={(values, {setSubmiting}) => {
+                        console.log(values)
+                    }}
+                >
+                    {({values, handleSubmit, isSubmitting, handleChange, setFieldValue}) => (
+                        <form onSubmit={handleSubmit}>
+                            <SelectContainer marginTop={2} label={'Agentes'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('agentes', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Grupos'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('grupos', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Data Criacao'}>
+                                <Field component={Select} options={options} onChange={opt => setFieldValue('dataCriacao', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Resolucao ate'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('resolucaoAte', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Primeira resposta ate'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('primeiraRespostaAte', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Status'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('status', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Prioridade'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('prioridade', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Tipo'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('tipo', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Origem'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('origem', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Tags'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('tags', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Empresas'}>
+                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('empresas', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Inicio do compromisso'}>
+                                <Field component={Select} options={options} onChange={opt => setFieldValue('inicioCompromisso', opt)}/>
+                            </SelectContainer>
+                            <SelectContainer marginTop={2} label={'Fim do compromisso'}>
+                                <Field component={Select} options={options} onChange={opt => setFieldValue('fimCompromisso', opt)}/>
+                            </SelectContainer>
+
+
+                            <input type={'submit'}/>
+
+                         </form>
+                        )}
+                </Formik>
+
             </div>
         </div>
     );
 };
 
-export default TicketsPage;
+const mapStateToProps = state => state
+const mapDispatchToProps = dispatch => ({
+    loadData: () => dispatch(listGrupos())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(TicketsPage);
+
+
+
+const options = [
+    {
+        label: "Option 1",
+        value: "option-1"
+    },
+    {
+        label: "Option 2",
+        value: "option-2"
+    },
+    {
+        label: "Option 3",
+        value: "option-3"
+    }
+];

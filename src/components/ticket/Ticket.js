@@ -6,7 +6,7 @@ import Row from "../Row";
 import Icon from "../Icon";
 import TicketPrioridade from "./TicketPrioridade";
 import Card from "../card/Card";
-import SelectCustomLabels from "./SelectCustomLabels";
+import SelectCustomLabels from "../form/SelectCustomLabels";
 
 const options = [
     {label: 'Aberto', value: 1},

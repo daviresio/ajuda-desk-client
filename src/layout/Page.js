@@ -2,7 +2,7 @@ import React from 'react';
 
 const Page = ({children}) => {
     return (
-        <div className={'page'}>
+        <div className={'page no-scroll'}>
             {children}
         </div>
     );
