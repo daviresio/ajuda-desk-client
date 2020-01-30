@@ -6,8 +6,10 @@ import {connect} from "react-redux";
 import {listGrupos} from "../store/sagas/api-data-saga";
 import {Field, Formik} from "formik";
 import SelectContainer from "../components/form/SelectContainer";
+import {exibirPanelNovaEmpresa, exibirPanelNovoContato} from "../store/sagas/panel-saga";
+import Button from "../components/button/Button";
 
-const TicketsPage = ({loadData}) => {
+const TicketsPage = ({loadData, novoContato}) => {
 
     useEffect(() => {
         loadData()
@@ -20,6 +22,7 @@ const TicketsPage = ({loadData}) => {
             <Ticket/>
             <Ticket/>
             <Ticket/>
+            <Button onClick={novoContato} label={'Teste'} color={'dark'} />
             </div>
             <div className={'filters'}>
                 <Subtitle>Filtros</Subtitle>
@@ -101,7 +104,8 @@ const TicketsPage = ({loadData}) => {
 
 const mapStateToProps = state => state
 const mapDispatchToProps = dispatch => ({
-    loadData: () => dispatch(listGrupos())
+    loadData: () => dispatch(listGrupos()),
+    novoContato: () => dispatch(exibirPanelNovoContato()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TicketsPage);

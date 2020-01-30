@@ -40,3 +40,37 @@ button {
   }
 
 }
+
+//icon button begin
+.icon-button {
+  color: $color-dark;
+  border: .1rem solid $color-primary-dark-2;
+  background-color: rgba($color-primary, .8);
+  font-size: 1.4rem;
+  padding: .2rem 1rem;
+  border-radius: .6rem;
+  cursor: pointer;
+  max-width: 3.5rem;
+  margin-left: 1rem;
+  position: relative;
+
+
+  &:hover {
+  background-color: $color-primary;
+  }
+
+  @include tooltipLeft;
+
+}
+
+.end-buttons-container-input {
+  position: relative;
+}
+
+.end-buttons {
+  position: absolute;
+  right: 1rem;
+  top: .5rem;
+  display: flex;
+}
+//icon button end

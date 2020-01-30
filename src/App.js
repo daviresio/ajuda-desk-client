@@ -2,13 +2,13 @@ import React from 'react';
 import {Provider} from "react-redux";
 import store from "./store/store";
 import RoutesConfig from "./config/RoutesConfig";
-import NovoContato from "./overlay/NovoContato";
+import Overlays from "./overlay/Overlays";
 
 function App() {
   return (
     <Provider store={store}>
         <RoutesConfig/>
-        <NovoContato/>
+        <Overlays/>
     </Provider>
   );
 }

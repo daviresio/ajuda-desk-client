@@ -1,0 +1,58 @@
+.novo-contato-overlay {
+
+  .novo-contato-header {
+    display: flex;
+    padding: 0 4rem;
+    img {
+      width: 3rem;
+      margin-right: 1rem;
+    }
+  }
+
+  .panel-content {
+    padding: 0 4rem;
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+
+    .input-container {
+      margin-bottom: 2rem;
+    }
+
+    .foto-container {
+
+    img {
+      width: 5rem;
+    }
+
+      .foto-description {
+        margin-left: 2rem;
+        width: 25rem;
+          height: 6rem;
+          justify-content: space-between;
+      }
+
+    }
+
+    .dados-contato {
+      background-color: $color-primary;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+      }
+
+
+    }
+
+    .adicionar-item {
+      color: $color-dark;
+    }
+
+  }
+
+}

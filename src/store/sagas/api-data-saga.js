@@ -14,6 +14,8 @@ function* loadGrupos() {
 export const listGrupos = () => ({type: GRUPOS.INIT})
 
 
+
+
 function* apiDataSaga() {
     yield all([
         takeEvery(GRUPOS.INIT, loadGrupos)

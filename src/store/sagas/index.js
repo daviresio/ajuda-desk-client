@@ -1,11 +1,11 @@
-import {all, takeEvery} from 'redux-saga/effects'
-import apiDataSaga, {loadGrupos} from "./api-data-saga";
-import controlSaga from "./control-saga";
-import {GRUPOS} from "../actions/api-request-actions";
+import {all} from 'redux-saga/effects'
+import apiDataSaga from "./api-data-saga";
+import contatosSaga from "../actions/api-data/contatos-saga";
+import novaEmpresaSaga from "../actions/api-data/empresa-saga";
 
 
 function* rootSaga() {
-    yield all([...apiDataSaga()])
+    yield all([...apiDataSaga(), ...contatosSaga(), ...novaEmpresaSaga()])
 }
 
 export default rootSaga

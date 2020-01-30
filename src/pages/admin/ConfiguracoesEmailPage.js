@@ -2,7 +2,7 @@ import React from 'react';
 import Card from "../../components/card/Card";
 import Row from "../../components/Row";
 import Title from "../../components/Title";
-import Button from "../../components/Button";
+import Button from "../../components/button/Button";
 import InputPesquisa from "../../components/form/InputPesquisa";
 import Subtitle from "../../components/Subtitle";
 import {withRouter} from "react-router-dom";

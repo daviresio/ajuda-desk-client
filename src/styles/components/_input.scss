@@ -1,5 +1,11 @@
-.input-container {
+input[type=file] {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
 
+.input-container {
+  position: relative;
   label {
     font-size: 1.35rem;
     color: $font-color-dark;
@@ -12,6 +18,14 @@
     color: $color-red;
     font-weight: bold;
     font-size: 1.4rem;
+  }
+
+  .end-buttons {
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    display: grid;
+    grid-gap: .5rem;
   }
 
   span {
@@ -46,6 +60,26 @@
     }
 
   }
+
+  &-error {
+    .input {
+      border: .1rem solid $color-red-dark;
+
+      &:hover, &:focus {
+        border: .1rem solid $color-red-dark;
+        padding: 1.1rem 1rem;
+      }
+
+    }
+
+    .error-detail {
+      color: $color-red-dark;
+      font-size: 1.2rem!important;
+      font-weight: normal!important;
+    }
+
+  }
+
 }
 
 .input-pesquisa {
@@ -63,14 +97,61 @@
     font-size: 1.4rem;
   }
 
-   .link {
+  .link {
     position: absolute;
     top: 1rem;
     right: 1rem;
 
-     &:hover {
-       text-decoration: none;
-     }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+}
+
+.input-com-radio-container {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+
+}
+
+.radio-container {
+  margin-top: 1.2rem;
+  position: relative;
+
+
+  @include tooltipRight;
+
+
+  input[type=radio] {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  label {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: .1rem solid $color-primary-dark-2;
+    background-color: $color-white;
+    position: relative;
+  }
+
+  input[type=radio]:checked + label {
+    border: .1rem solid $color-blue-dark;
+
+    &::after {
+      position: absolute;
+      top: .2rem;
+      left: .2rem;
+      content: '';
+      width: .7rem;
+      height: .7rem;
+      border-radius: 50%;
+      background-color: $color-blue-dark;
+    }
   }
 
 }

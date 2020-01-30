@@ -12,6 +12,7 @@
 @import "layout/layout";
 @import "layout/panel_right";
 
+@import "components/tooltip";
 @import "components/card";
 @import "components/button";
 @import "components/input";
@@ -23,6 +24,9 @@
 @import "pages/tickets_page";
 @import "pages/admin_page";
 @import "pages/configuracoes_email_page";
+
+@import "overlay/novo_contato";
+@import "overlay/nova_empresa";
 
 @import "util/util";
 @import "util/margin";

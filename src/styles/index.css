@@ -594,11 +594,12 @@ li {
   justify-content: space-between;
 }
 .panel-right .panel-body .panel-header {
-  height: 7rem;
+  height: 5rem;
 }
 .panel-right .panel-body .panel-content {
   flex-grow: 1;
   overflow: auto;
+  padding-bottom: 6rem;
 }
 .panel-right .panel-body .panel-footer {
   display: flex;
@@ -626,6 +627,52 @@ li {
   cursor: pointer;
 }
 
+.panel-right-enter-animation {
+  animation: opacity-enter 0.5s linear;
+}
+.panel-right-enter-animation .panel-body {
+  animation: position-enter 0.5s linear;
+}
+
+.panel-right-leave-animation {
+  animation: opacity-leave 0.5s linear;
+}
+.panel-right-leave-animation .panel-body {
+  animation: position-leave 0.5s linear;
+}
+
+@keyframes opacity-enter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes position-enter {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes opacity-leave {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes position-leave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 .card {
   background-color: #FFF;
   border-radius: 0.4rem;
@@ -675,6 +722,90 @@ button i {
   background-color: rgba(24, 50, 71, 0.8);
 }
 
+.icon-button {
+  color: #183247;
+  border: 0.1rem solid #c5c8cc;
+  background-color: rgba(235, 239, 243, 0.8);
+  font-size: 1.4rem;
+  padding: 0.2rem 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  max-width: 3.5rem;
+  margin-left: 1rem;
+  position: relative;
+}
+.icon-button:hover {
+  background-color: #EBEFF3;
+}
+.icon-button::before {
+  content: "";
+  display: inline-block;
+  background-color: #183247;
+  width: 0;
+  height: 1rem;
+  transform: rotateZ(45deg);
+  position: absolute;
+  top: 0.8rem;
+  right: 2rem;
+  opacity: 0;
+  z-index: 10;
+  transition: all 0.5s;
+  transition-property: opacity, right;
+  pointer-events: none;
+}
+.icon-button:hover::before {
+  width: 1rem;
+  opacity: 1;
+  right: 4rem;
+  transition: all 0.5s;
+  transition-property: opacity, right;
+}
+.icon-button::after {
+  content: attr(data-tooltip);
+  display: inline-block;
+  background-color: #183247;
+  color: #FFF;
+  white-space: nowrap;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  top: 0;
+  right: 2.5rem;
+  opacity: 0;
+  z-index: 10;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  transition-property: opacity, right;
+}
+.icon-button:hover::after {
+  width: auto;
+  opacity: 1;
+  right: 4.5rem;
+  transition: all 0.5s;
+  transition-property: opacity, right;
+}
+
+.end-buttons-container-input {
+  position: relative;
+}
+
+.end-buttons {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  display: flex;
+}
+
+input[type=file] {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.input-container {
+  position: relative;
+}
 .input-container label {
   font-size: 1.35rem;
   color: #2a343f;
@@ -686,6 +817,13 @@ button i {
   color: #FF5959;
   font-weight: bold;
   font-size: 1.4rem;
+}
+.input-container .end-buttons {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  display: grid;
+  grid-gap: 0.5rem;
 }
 .input-container span {
   display: inline-block;
@@ -702,17 +840,29 @@ button i {
   box-sizing: border-box;
 }
 .input-container .input:hover {
-  border: 0.1rem solid #4DA1FF;
+  border: 0.1rem solid #2684FF;
   transition: all 0.3s;
 }
 .input-container .input:focus {
-  border: 0.2rem solid #4DA1FF;
+  border: 0.2rem solid #2684FF;
   padding-top: 1rem;
   padding-bottom: 1rem;
   transition: all 0.3s;
 }
 .input-container .input-rounded {
   border-radius: 0.6rem;
+}
+.input-container-error .input {
+  border: 0.1rem solid #D72F32;
+}
+.input-container-error .input:hover, .input-container-error .input:focus {
+  border: 0.1rem solid #D72F32;
+  padding: 1.1rem 1rem;
+}
+.input-container-error .error-detail {
+  color: #D72F32;
+  font-size: 1.2rem !important;
+  font-weight: normal !important;
 }
 
 .input-pesquisa {
@@ -735,6 +885,82 @@ button i {
 }
 .input-pesquisa .link:hover {
   text-decoration: none;
+}
+
+.input-com-radio-container {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+}
+
+.radio-container {
+  margin-top: 1.2rem;
+  position: relative;
+}
+.radio-container::before {
+  content: "";
+  display: inline-block;
+  background-color: #183247;
+  width: 1rem;
+  height: 1rem;
+  transform: rotateZ(45deg);
+  position: absolute;
+  top: 0.2rem;
+  left: 0.5rem;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: 10;
+}
+.radio-container:hover::before {
+  opacity: 1;
+  left: 2rem;
+  transition: all 0.5s;
+}
+.radio-container::after {
+  content: attr(data-tooltip);
+  display: inline-block;
+  background-color: #183247;
+  color: #FFF;
+  white-space: nowrap;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: 10;
+}
+.radio-container:hover::after {
+  opacity: 1;
+  left: 2.5rem;
+  transition: all 0.5s;
+}
+.radio-container input[type=radio] {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+.radio-container label {
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 0.1rem solid #c5c8cc;
+  background-color: #FFF;
+  position: relative;
+}
+.radio-container input[type=radio]:checked + label {
+  border: 0.1rem solid #2C5CC5;
+}
+.radio-container input[type=radio]:checked + label::after {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #2C5CC5;
 }
 
 .ticket {
@@ -785,7 +1011,7 @@ button i {
   background-color: #6BB437;
 }
 .ticket .acoes .ticket-prioridade .prioridade-cor-blue {
-  background-color: #4DA1FF;
+  background-color: #2684FF;
 }
 .ticket .acoes .ticket-prioridade .prioridade-cor-yellow {
   background-color: #FFD013;
@@ -851,7 +1077,7 @@ button i {
 }
 .select .select-lista li i {
   margin-right: 0;
-  color: #4DA1FF;
+  color: #2684FF;
   position: absolute;
   right: 0.5rem;
 }
@@ -1033,7 +1259,7 @@ button i {
   background-color: #f0daf9;
 }
 .admin-page .item-link-admin-color-blue:hover {
-  border: 0.1rem solid #4DA1FF;
+  border: 0.1rem solid #2684FF;
   background-color: #E5F2FD;
 }
 .admin-page .item-link-admin-color-orange:hover {
@@ -1064,6 +1290,86 @@ button i {
   margin-left: 6rem;
 }
 
+.novo-contato-overlay .novo-contato-header {
+  display: flex;
+  padding: 0 4rem;
+}
+.novo-contato-overlay .novo-contato-header img {
+  width: 3rem;
+  margin-right: 1rem;
+}
+.novo-contato-overlay .panel-content {
+  padding: 0 4rem;
+}
+.novo-contato-overlay .panel-content p {
+  margin-bottom: 2rem;
+}
+.novo-contato-overlay .panel-content .input-container {
+  margin-bottom: 2rem;
+}
+.novo-contato-overlay .panel-content .foto-container img {
+  width: 5rem;
+}
+.novo-contato-overlay .panel-content .foto-container .foto-description {
+  margin-left: 2rem;
+  width: 25rem;
+  height: 6rem;
+  justify-content: space-between;
+}
+.novo-contato-overlay .panel-content .dados-contato {
+  background-color: #EBEFF3;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+.novo-contato-overlay .panel-content .dados-contato h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.novo-contato-overlay .panel-content .adicionar-item {
+  color: #183247;
+}
+
+.nova-empresa-overlay .nova-empresa-header {
+  display: flex;
+  padding: 0 4rem;
+}
+.nova-empresa-overlay .nova-empresa-header img {
+  width: 3rem;
+  margin-right: 1rem;
+}
+.nova-empresa-overlay .panel-content {
+  padding: 0 4rem;
+}
+.nova-empresa-overlay .panel-content p {
+  margin-bottom: 2rem;
+}
+.nova-empresa-overlay .panel-content .input-container {
+  margin-bottom: 2rem;
+}
+.nova-empresa-overlay .panel-content .foto-container img {
+  width: 5rem;
+}
+.nova-empresa-overlay .panel-content .foto-container .foto-description {
+  margin-left: 2rem;
+  width: 25rem;
+  height: 6rem;
+  justify-content: space-between;
+}
+.nova-empresa-overlay .panel-content .foto-container .inner-foto-container {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nova-empresa-overlay .panel-content .foto-container .inner-foto-container-empresa-empty {
+  background: linear-gradient(to top, #77D9D1, #abf3ee);
+  border-radius: 0.5rem;
+}
+.nova-empresa-overlay .panel-content .foto-container .inner-foto-container-empresa-empty img {
+  width: 3rem;
+}
+
 .link-hover {
   cursor: pointer;
 }
@@ -1078,6 +1384,12 @@ button i {
 .link:hover {
   text-decoration: underline;
 }
+.link-block {
+  cursor: not-allowed;
+}
+.link-no-decoration:hover {
+  text-decoration: none;
+}
 
 .row {
   width: 100%;
@@ -1087,6 +1399,9 @@ button i {
 }
 .row-no-space {
   justify-content: stretch;
+}
+.row-align-right {
+  justify-content: flex-end;
 }
 
 .column {
@@ -1099,6 +1414,18 @@ button i {
   height: 0.1rem;
   background-color: #dee2e6;
   margin: 1.2rem 0;
+}
+
+.label {
+  display: inline-block;
+}
+
+.required {
+  color: #FF5959;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+  margin-left: 0.2rem;
 }
 
 .margin-top {

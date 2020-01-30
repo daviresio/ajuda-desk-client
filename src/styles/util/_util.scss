@@ -16,6 +16,16 @@
     text-decoration: underline;
   }
 
+  &-block {
+    cursor: not-allowed;
+  }
+
+  &-no-decoration {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
 }
 
 .row {
@@ -28,7 +38,12 @@
     justify-content: stretch;
   }
 
+  &-align-right {
+    justify-content: flex-end;
+  }
+
 }
+
 
 .column {
   display: flex;
@@ -42,3 +57,14 @@
   margin: 1.2rem 0;
 }
 
+.label {
+  display: inline-block;
+}
+
+.required {
+  color: $color-red;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: .7rem;
+  margin-left: .2rem;
+}
