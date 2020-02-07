@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Row = ({children, marginBottom, marginTop, className, noSpace, alignRight}) => {
+const Row = ({children, marginBottom, marginTop, className, noSpace, alignRight, onClick}) => {
 
     let c = 'row'
     if(marginBottom) c = c + ` margin-bottom-${marginBottom}`
@@ -10,7 +10,7 @@ const Row = ({children, marginBottom, marginTop, className, noSpace, alignRight}
     if(alignRight) c = c + ` row-align-right`
 
     return (
-        <div className={c}>
+        <div className={c} onClick={onClick}>
             {children}
         </div>
     );

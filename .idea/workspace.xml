@@ -2,58 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb1a1b01-e6f3-46da-9077-90159a533748" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/empty_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/empty_image_empresa_logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/nova_empresa.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/novo_contato.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DelayUnmount.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button/EndButtonInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button/IconButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/form/InputComRadio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/form/RadioTooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/form/TextArea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overlay/Overlays.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overlay/nova-empresa/NovaEmpresa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overlay/nova-empresa/NovaEmpresaForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overlay/novo-contato/NovoContato.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overlay/novo-contato/NovoContatoForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/api-data/contatos-saga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/api-data/empresa-saga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/panel-actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/panel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/sagas/panel-saga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/components/_tooltip.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/overlay/_nova_empresa.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/overlay/_novo_contato.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/empresa/contatos.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/empresa/detalhes_conta.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/empresa/politicas_sla.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/empresa/tarefas.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TabMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/button/DropdownButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/empresa/EmpresaPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/contato-actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/empresa-actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components/_content_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components/_tab_menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/pages/_empresa_page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Linq.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Linq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClickOutside.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClickOutside.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Row.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/Label.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/Label.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/SelectContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/SelectContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/PanelRight.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/PanelRight.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overlay/NovoContato.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/InputComRadio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/InputComRadio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/RoutesConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/RoutesConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/SubTopbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/SubTopbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Topbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/Topbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overlay/nova-empresa/NovaEmpresaForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/nova-empresa/NovaEmpresaForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overlay/novo-contato/NovoContatoForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/novo-contato/NovoContatoForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EmpresasPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/EmpresasPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/TicketsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TicketsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/ConfiguracoesEmailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/ConfiguracoesEmailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/api-data/contatos-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/contatos-saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/api-data/empresa-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/empresa-saga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/api-request-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/api-request-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/panel-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/panel-actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/api-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/api-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/root-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/sagas/api-data-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/api-data-saga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/abstract/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/abstract/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/sagas/panel-saga.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/abstract/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/abstract/_typography.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_input.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/layout/_panel_right.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout/_panel_right.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/layout/_topbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout/_topbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/pages/_tickets_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/pages/_tickets_page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/util/_util.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/util/_util.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,11 +111,11 @@
       <recent name="$PROJECT_DIR$/src/styles/scss/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/store/sagas" />
+      <recent name="$PROJECT_DIR$/src/pages/empresa" />
       <recent name="$PROJECT_DIR$/src/overlay/novo-contato" />
       <recent name="$PROJECT_DIR$/src/store/actions" />
       <recent name="$PROJECT_DIR$/src/overlay/nova-empresa" />
-      <recent name="$PROJECT_DIR$/src/components/button" />
-      <recent name="$PROJECT_DIR$/src/components/form" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -203,6 +194,16 @@
       <workItem from="1579952415472" duration="25076000" />
       <workItem from="1580046897457" duration="18976000" />
       <workItem from="1580124200374" duration="101000" />
+      <workItem from="1580350878708" duration="658000" />
+      <workItem from="1580382076929" duration="656000" />
+      <workItem from="1580853590893" duration="730000" />
+      <workItem from="1580865005730" duration="6415000" />
+      <workItem from="1580900772481" duration="305000" />
+      <workItem from="1580917633200" duration="3667000" />
+      <workItem from="1580935020158" duration="11371000" />
+      <workItem from="1580987032753" duration="9000" />
+      <workItem from="1581006200813" duration="2539000" />
+      <workItem from="1581023134853" duration="10710000" />
     </task>
     <servers />
   </component>
@@ -222,10 +223,10 @@
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
     <state x="2459" y="322" width="424" height="591" key="#com.intellij.ide.macro.MacrosDialog/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1579377435116" />
-    <state x="2282" y="329" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579744216063">
+    <state x="2282" y="329" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581030195425">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state x="2282" y="329" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1579744216063" />
+    <state x="2282" y="329" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581030195425" />
     <state x="4526" y="454" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579377807569" />
     <state x="2222" y="370" width="908" height="680" key="EditFileWatcherDialog" timestamp="1579454304961">
       <screen x="1440" y="0" width="2560" height="1080" />
@@ -235,25 +236,25 @@
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
     <state x="2459" y="354" width="424" height="491" key="FileChooserDialogImpl/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1579392130110" />
-    <state width="2467" height="204" key="GridCell.Tab.0.bottom" timestamp="1580086014860">
+    <state width="2467" height="294" key="GridCell.Tab.0.bottom" timestamp="1581030138467">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state width="2467" height="204" key="GridCell.Tab.0.bottom/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1580086014860" />
+    <state width="2467" height="294" key="GridCell.Tab.0.bottom/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581030138467" />
     <state width="1577" height="275" key="GridCell.Tab.0.bottom/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
-    <state width="2467" height="204" key="GridCell.Tab.0.center" timestamp="1580086014860">
+    <state width="2467" height="294" key="GridCell.Tab.0.center" timestamp="1581030138466">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state width="2467" height="204" key="GridCell.Tab.0.center/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1580086014860" />
+    <state width="2467" height="294" key="GridCell.Tab.0.center/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581030138466" />
     <state width="1577" height="275" key="GridCell.Tab.0.center/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
-    <state width="2467" height="204" key="GridCell.Tab.0.left" timestamp="1580086014860">
+    <state width="2467" height="294" key="GridCell.Tab.0.left" timestamp="1581030138466">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state width="2467" height="204" key="GridCell.Tab.0.left/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1580086014860" />
+    <state width="2467" height="294" key="GridCell.Tab.0.left/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581030138466" />
     <state width="1577" height="275" key="GridCell.Tab.0.left/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
-    <state width="2467" height="204" key="GridCell.Tab.0.right" timestamp="1580086014860">
+    <state width="2467" height="294" key="GridCell.Tab.0.right" timestamp="1581030138466">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state width="2467" height="204" key="GridCell.Tab.0.right/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1580086014860" />
+    <state width="2467" height="294" key="GridCell.Tab.0.right/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581030138466" />
     <state width="1577" height="275" key="GridCell.Tab.0.right/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
     <state x="2495" y="185" width="1022" height="737" key="SettingsEditor" timestamp="1579454309708">
       <screen x="1440" y="0" width="2560" height="1080" />
@@ -263,9 +264,9 @@
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
     <state x="2419" y="252" key="run.anything.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1580077423297" />
-    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1580052189252">
+    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581028879646">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1580052189252" />
+    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581028879646" />
   </component>
 </project>

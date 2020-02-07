@@ -68,3 +68,13 @@
   margin-bottom: .7rem;
   margin-left: .2rem;
 }
+
+//transicao ao voltar icone a posicao normal
+.icon-no-rotate {
+  @include transition;
+}
+
+.icon-rotate {
+  transform: rotateZ(180deg);
+  @include transition;
+}

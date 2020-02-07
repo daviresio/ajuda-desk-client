@@ -15,10 +15,10 @@ import IconButton from "../../components/button/IconButton";
 import EndButtonInput from "../../components/button/EndButtonInput";
 import CreatableSelect from "react-select/creatable/dist/react-select.esm";
 import * as Yup from "yup";
-import {esconderPanelNovoContato} from "../../store/sagas/panel-saga";
-import {salvarContato} from "../../store/actions/api-data/contatos-saga";
 import {connect} from "react-redux";
-import {pesquisarEmpresas} from "../../store/actions/api-data/empresa-saga";
+import {pesquisarEmpresas} from "../../store/actions/empresa-actions";
+import {esconderPanelNovoContato} from "../../store/actions/panel-actions";
+import {dadosDefaultContato, salvarContato} from "../../store/actions/contato-actions";
 
 const validadeSchema = Yup.object().shape({
     nome: Yup.string().required('O campo nome `e obrigatorio'),
@@ -35,21 +35,7 @@ const NovoContatoForm = ({close, willUnmount, salvar, empresas, pesquisarEmpresa
 
     let handleS = null
 
-
-    const handleChangeEmpresa = (newValue, actionMeta) => {
-        console.group('Value Changed');
-        console.log(newValue);
-        console.log(`action: ${actionMeta.action}`);
-        console.groupEnd();
-    };
-
-    const handleInputEmpresaChange = (v, actionMeta) => {
-        console.group('Input Changed');
-        console.log(v);
-        console.log(`action: ${actionMeta.action}`);
-        console.groupEnd();
-        pesquisarEmpresas(v)
-    };
+    let camposContatoInvalid = false
 
     return (
         <PanelRight confirm={() => handleS()} willUnmount={willUnmount} close={close} className={'novo-contato-overlay'}
@@ -77,10 +63,27 @@ const NovoContatoForm = ({close, willUnmount, salvar, empresas, pesquisarEmpresa
                         emails: [
                             {principal: true, email: ''},
                         ],
-                        empresas: [],
+                        empresas: [
+                            {value: '', label: '', principal: true}
+                        ],
                     }}
                     validationSchema={validadeSchema}
                     onSubmit={(values, {setSubmiting}) => {
+                        camposContatoInvalid = false
+
+                        if(values.emails.every(x => x && x.label === '') &&
+                            values.telefoneComercial === '' &&
+                            values.celular === '' &&
+                            values.twitter === '') {
+                            camposContatoInvalid = true
+                            return
+                        }
+
+                        const v = {
+                            ...values,
+                            empresas: values.empresas.map(x => ({id: x.value, nome: x.label, principal: x.principal})),
+                            emails: values.emails.map(x => ({id: x.value, nome: x.label, principal: x.principal})),
+                        }
                         console.log(salvar(values))
                     }}
                 >
@@ -98,12 +101,23 @@ const NovoContatoForm = ({close, willUnmount, salvar, empresas, pesquisarEmpresa
                         }
 
                         const setEmpresaPrincipal = (i) => {
-                            if(values[i].empresas === '') return
+                            if(values.empresas[i] === '') return
                             values.empresas.forEach((x, i2) => {
                                 if(i === i2) setFieldValue(`empresas.[${i2}].principal`, true)
                                 else setFieldValue(`empresas.[${i2}].principal`, false)
                             })
                         }
+
+
+                        const handleChangeEmpresa = (v, i) => {
+                            if(v.__isNew__) v.value = 0
+                            setFieldValue(`empresas.[${i}]`, {...values.empresas[i], label: v.label, value: v.value})
+                        };
+
+                        const handleInputEmpresaChange = (v) => {
+                            pesquisarEmpresas(v)
+                        };
+
 
                         return <form onSubmit={handleSubmit}>
 
@@ -131,6 +145,7 @@ const NovoContatoForm = ({close, willUnmount, salvar, empresas, pesquisarEmpresa
                                     <Subtitle>Pelo menos um desses campos e obrigatorio</Subtitle>
                                     <span className={'required'}> *</span>
                                 </Row>
+                                {camposContatoInvalid && <span className={'error-detail'}>Pelo menos um destes campos deve ser preenchido</span>}
 
                                 <Label marginBottom={1}>E-mail</Label>
 
@@ -167,7 +182,7 @@ const NovoContatoForm = ({close, willUnmount, salvar, empresas, pesquisarEmpresa
                                         render={arrayHelper => (
                                             <>
                                                 {values.empresas.map((item, index) => (
-                                                    <InputComRadio key={index}
+                                                    <InputComRadio className={'margin-top-2'} key={index}
                                                                    radio={<Field component={RadioTooltip} label={'Empresa principal'} name={`empresas.${index}.principal`} onChange={() => setEmpresaPrincipal(index)}/>}
                                                                    input={
                                                                        <EndButtonInput buttons={
@@ -175,19 +190,13 @@ const NovoContatoForm = ({close, willUnmount, salvar, empresas, pesquisarEmpresa
                                                                                <IconButton icon={<i className="fas fa-ticket-alt" />} label={'Permitir que este contato veja os tickets dessa empresa'} onClick={() => {}}/>
                                                                                <IconButton icon={<i className="far fa-trash-alt" />} label={'Excluir'} onClick={() => arrayHelper.remove(index)}/>
                                                                            </>}>
-                                                                           <Field component={CreatableSelect} name={`empresas.${index}.nome`}/>
+                                                                           <Field component={CreatableSelect} name={`empresas.${index}.nome`} isClearable onChange={(v) => handleChangeEmpresa(v, index)} onInputChange={handleInputEmpresaChange} options={empresas}/>
                                                                        </EndButtonInput>
                                                                    }
                                                     />
                                                 ))}
-                                                <CreatableSelect
-                                                    isClearable
-                                                    onChange={handleChangeEmpresa}
-                                                    onInputChange={handleInputEmpresaChange}
-                                                    options={empresas}
-                                                />
-                                                <Row marginTop={2} alignRight><AdicionarFormItem onClick={() => arrayHelper.insert(values.empresas.length, {principal: false, empresa: {label: '', value: 0}})}
-                                                                                                 block={values.empresas.some(v => v.empresa.value === 0)} label={'Associar outra empresa'}/></Row>
+                                                <Row marginTop={2} alignRight><AdicionarFormItem onClick={() => arrayHelper.insert(values.empresas.length, {principal: false, label: '', value: 0})}
+                                                                                                 block={values.empresas.some(v => v && v.label === '')} label={'Associar outra empresa'}/></Row>
                                             </>
                                         )} />
 
@@ -207,7 +216,8 @@ const mapStateToProps = ({panel, apiData}) => ({
 const mapDispatchToProps = dispatch => ({
     close: () => dispatch(esconderPanelNovoContato()),
     salvar: (v) => dispatch(salvarContato(v)),
-    pesquisarEmpresas: (v) => dispatch(pesquisarEmpresas(v))
+    pesquisarEmpresas: (v) => dispatch(pesquisarEmpresas(v)),
+    carregarDadosDefault: () => dispatch(dadosDefaultContato())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NovoContatoForm);

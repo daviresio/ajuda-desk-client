@@ -4,13 +4,14 @@ import Painel from "../pages/Painel";
 import Layout from "../layout/Layout";
 import TicketsPage from "../pages/TicketsPage";
 import ContatosPage from "../pages/ContatosPage";
-import EmpresasPage from "../pages/EmpresasPage";
+import EmpresasPage from "../pages/empresa/EmpresasPage";
 import SolucoesPage from "../pages/SolucoesPage";
 import BotsPage from "../pages/BotsPage";
 import AnalisesPage from "../pages/AnalisesPage";
 import AdminPage from "../pages/admin/AdminPage";
 import ConfiguracoesEmailPage from "../pages/admin/ConfiguracoesEmailPage";
 import CadastroConfiguracaoEmailPage from "../pages/admin/CadastroConfiguracaoEmailPage";
+import EmpresaPage from "../pages/empresa/EmpresaPage";
 
 const RoutesConfig = () => {
     return (
@@ -20,7 +21,8 @@ const RoutesConfig = () => {
                     <Route path={'/painel'} component={Painel}/>
                     <Route path={'/tickets'} component={TicketsPage}/>
                     <Route path={'/contatos'} component={ContatosPage}/>
-                    <Route path={'/empresas'} component={EmpresasPage}/>
+                    <Route path={'/empresas'} exact={true} component={EmpresasPage}/>
+                    <Route path={'/empresas/:id'} component={EmpresaPage}/>
                     <Route path={'/solucoes'} component={SolucoesPage}/>
                     <Route path={'/bots'} component={BotsPage}/>
                     <Route path={'/analises'} component={AnalisesPage}/>

@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import {esconderPanelNovaEmpresa} from "../../store/sagas/panel-saga";
 import {connect} from "react-redux";
 import PanelRight from "../../layout/PanelRight";
 import Title from "../../components/Title";
@@ -14,7 +13,8 @@ import SelectContainer from "../../components/form/SelectContainer";
 import CreatableSelect from "react-select/creatable/dist/react-select.esm";
 import Select from "react-select";
 import * as Yup from "yup";
-import {dadosDefaultNovaEmpresa, salvarEmpresa} from "../../store/actions/api-data/empresa-saga";
+import {dadosDefaultNovaEmpresa, salvarEmpresa} from "../../store/actions/empresa-actions";
+import {esconderPanelNovaEmpresa} from "../../store/actions/panel-actions";
 
 
 const validadeSchema = Yup.object().shape({
@@ -76,7 +76,9 @@ const NovaEmpresaForm = ({scores, tipoPlanos, dataRenovacoes, tipoEmpresas, clos
                             return <form onSubmit={handleSubmit}>
 
                                 <Row noSpace className={'foto-container'} marginBottom={2}>
-                                    <div className={hasFoto ? 'inner-foto-container' : 'inner-foto-container inner-foto-container-empresa-empty'}><img src={hasFoto ? values.foto : emptyImage}/></div>
+                                    <div className={hasFoto ? 'inner-foto-container' : 'inner-foto-container inner-foto-container-empresa-empty'}>
+                                        <img src={hasFoto ? values.foto : emptyImage}/>
+                                    </div>
 
                                     <Column className={'foto-description'}>
                                         {hasFoto ? <Row noSpace>

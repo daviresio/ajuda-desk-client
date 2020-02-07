@@ -8,7 +8,7 @@ const SubTopbar = () => {
         <div className={'subtopbar'}>
             <Row>
                 <div className={'grupos'}>
-                    <span>Todos os grupos</span> <i className="fas fa-chevron-down"></i>
+                    <span>Todos os grupos</span> <i className="fas fa-chevron-down" />
                 </div>
                 <Linq>Atividades recentes <i className="fas fa-chevron-right" /> </Linq>
             </Row>

@@ -1,5 +1,5 @@
 import {GRUPOS} from "../actions/api-request-actions";
-import {EMPRESA, SCORE} from "../actions/api-data/empresa-saga";
+import {EMPRESA, SCORE} from "../actions/empresa-actions";
 
 const INITIAL_STATE = {
     grupos: [],
@@ -8,23 +8,20 @@ const INITIAL_STATE = {
     dataRenovacoes: [],
     tipoEmpresas: [],
     empresas: [],
+    empresa: {},
     error: null,
 }
 
 const apiData = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case GRUPOS.LOADED_SUCCESS:
+        case GRUPOS.LIST_SUCCESS:
             return {...state, grupos: action.payload}
-        case GRUPOS.LOADED_ERROR:
-            return {...state, error: action.payload}
         case SCORE.REQUEST_LIST_SUCESSO:
             return {...state, scores: action.payload}
-        case SCORE.REQUEST_LIST_ERROR:
-            return {...state, error: action.payload}
-        case EMPRESA.REQUEST_LIST_SUCESSO:
+        case EMPRESA.LIST_SUCESSO:
             return {...state, empresas: action.payload}
-        case EMPRESA.REQUEST_LIST_ERROR:
-            return {...state, error: action.payload}
+        case EMPRESA.BUSCAR_SUCESSO:
+            return {...state, empresa: action.payload}
         default:
             return state
     }

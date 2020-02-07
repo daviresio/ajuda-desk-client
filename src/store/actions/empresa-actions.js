@@ -1,0 +1,25 @@
+export const EMPRESA = {
+    DEFAULT_REQUESTS: 'NOVA_EMPRESA_DEFAULT_REQUESTS_INIT',
+    PESQUISAR: 'EMPRESA_PESQUISAR',
+    SALVAR_REQUEST: 'SALVAR_EMPRESA_REQUEST',
+    SALVAR_SUCESSO: 'SALVAR_EMPRESA_SUCESSO',
+    SALVAR_ERRO: 'SALVAR_EMPRESA_ERRO',
+    BUSCAR: 'BUSCAR_EMPRESA',
+    BUSCAR_SUCESSO: 'BUSCAR_EMPRESA_SUCESSO',
+    BUSCAR_ERRO: 'BUSCAR_EMPRESA_ERRO',
+    LIST_SUCESSO: 'EMPRESA_LIST_SUCESSO',
+    LIST_ERRO: 'EMPRESA_LIST_ERRO',
+}
+
+export const SCORE = {
+    REQUEST_LIST_SUCESSO: 'SCORE_LIST_SUCCESS',
+    REQUEST_LIST_ERROR: 'SCORE_LIST_ERROR',
+}
+
+export const pesquisarEmpresas = v => ({type: EMPRESA.PESQUISAR, payload: v})
+
+export const dadosDefaultNovaEmpresa = () => ({type: EMPRESA.DEFAULT_REQUESTS})
+
+export const salvarEmpresa = (v) => ({type: EMPRESA.SALVAR_REQUEST, payload: v})
+
+export const buscarEmpresa = (v) => ({type: EMPRESA.BUSCAR, payload: v})

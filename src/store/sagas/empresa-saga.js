@@ -1,34 +1,15 @@
 import {all, call, put, takeEvery, takeLatest} from "redux-saga/effects";
-import api from "../../../config/network";
-
-export const EMPRESA = {
-    DEFAULT_REQUESTS: 'NOVA_EMPRESA_DEFAULT_REQUESTS_INIT',
-    PESQUISAR: 'EMPRESA_PESQUISAR',
-    SALVAR_REQUEST: 'SALVAR_EMPRESA_REQUEST',
-    SALVAR_SUCESSO: 'SALVAR_EMPRESA_SUCESSO',
-    SALVAR_ERRO: 'SALVAR_EMPRESA_ERRO',
-}
-
-export const SCORE = {
-    REQUEST_LIST_SUCESSO: 'SCORE_LIST_SUCCESS',
-    REQUEST_LIST_ERROR: 'SCORE_LIST_ERROR',
-}
-
-export const pesquisarEmpresas = v => ({type: EMPRESA.PESQUISAR, payload: v})
-
-export const dadosDefaultNovaEmpresa = () => ({type: EMPRESA.DEFAULT_REQUESTS})
-
-export const salvarEmpresa = (v) => ({type: EMPRESA.SALVAR_REQUEST, payload: v})
+import api from "../../config/network";
+import {EMPRESA, SCORE} from "../actions/empresa-actions";
+import { toast } from "react-toastify";
 
 
 function* pesquisar({payload: v}) {
-    console.log('entrei', v)
     try {
         const {data} = yield call(api.get, `/empresas?nome=${v}`)
-        yield put({type: EMPRESA.REQUEST_LIST_SUCESSO, payload: data})
+        yield put({type: EMPRESA.LIST_SUCESSO, payload: data})
     } catch (e) {
-        console.log(e)
-        yield put({type: EMPRESA.REQUEST_LIST_ERROR, payload: e})
+        yield put({type: EMPRESA.LIST_SUCESSO, payload: e})
     }
 }
 
@@ -46,19 +27,33 @@ function* saveRequest({payload: v}) {
     try {
         const {data} = yield call(api.post, '/empresas', v)
         yield put({type: EMPRESA.SALVAR_SUCESSO, payload: data})
+        toast.success('🚀 Empresa criada!')
     } catch (e) {
         yield put({type: EMPRESA.SALVAR_ERRO, payload: e})
+        toast.error('😫 Ocorreu um erro no servidor')
+    }
+}
+
+
+function* buscar({payload: v}) {
+    try {
+        const {data} = yield call(api.get, `/empresas/${v}`)
+        yield put({type: EMPRESA.BUSCAR_SUCESSO, payload: data})
+    } catch (e) {
+        yield put({type: EMPRESA.BUSCAR_ERRO, payload: e})
+        toast.error('🙉 Nao foi possivel carregar a empresa')
     }
 }
 
 
 
-function* novaEmpresaSaga() {
+function* empresaSaga() {
     yield all([
         takeEvery(EMPRESA.DEFAULT_REQUESTS, dadosDefaultRequest),
         takeEvery(EMPRESA.SALVAR_REQUEST, saveRequest),
         takeEvery(EMPRESA.PESQUISAR, pesquisar),
+        takeEvery(EMPRESA.BUSCAR, buscar),
     ])
 }
 
-export default novaEmpresaSaga
+export default empresaSaga

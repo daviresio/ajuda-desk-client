@@ -1,0 +1,88 @@
+.empresa-page {
+  display: flex;
+
+  $second-content-width: 35rem;
+
+  .main-content-empresa-page {
+    width: calc(100% - #{$second-content-width});
+    min-height: $page-height;
+
+    .foto-container {
+      align-items: center;
+
+      img {
+        width: 8rem;
+      }
+
+      .inner-foto-container {
+        width: 8rem;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-right: 2rem;
+
+        &::after {
+          content: '';
+          width: 112%;
+          height: 112%;
+          border: .2rem solid $color-border-primary;
+          position: absolute;
+          border-radius: .5rem;
+        }
+
+        &-empresa-empty {
+          background: linear-gradient(to top, #77D9D1, #abf3ee);
+          border-radius: .5rem;
+
+          img {
+            width: 4rem;
+          }
+        }
+
+      }
+
+      .description {
+        h1 {
+          line-height: .5rem;
+        }
+
+        .qtd-contatos {
+          font-size: 1.38rem;
+          margin: .3rem 0;
+        }
+      }
+    }
+
+    .tab-content {
+      margin: 1rem 8rem;
+    }
+
+  }
+
+  .second-content-empresa-page {
+    position: fixed;
+    width: $second-content-width;
+    right: 0;
+    top: $topbars-height;
+    height: calc(#{$page-height} + 2rem);
+    background-color: $subtopbar-color;
+    border-left: .1rem solid $color-border-primary-dark;
+
+
+    //display: grid;
+    //grid-template-columns: 1fr 5rem;
+    //overflow: hidden;
+    //.content-second-content-empresa-page {
+    //  border-right: .1rem solid $color-border-primary;
+    //  overflow: auto;
+    //}
+    //
+    //.options-second-content-empresa-page {
+    //
+    //}
+
+  }
+
+}

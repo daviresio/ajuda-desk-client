@@ -1,0 +1,33 @@
+.tab-menu {
+  background-color: $color-primary;
+  border: .1rem solid $color-border-primary;
+  border-top: none;
+  padding: 1rem 1rem 0;
+
+  .tab {
+    cursor: pointer;
+    padding: 0 2rem 1.3rem;
+    margin: 0 1rem;
+    font-size: 1.3rem;
+    border-radius: .3rem;
+    user-select: none;
+
+    &:hover {
+      border-bottom: .3rem solid $color-primary-dark-2;
+      padding: 0 2rem 1rem;
+    }
+
+    &-active {
+      color: $color-blue;
+      border-bottom: .3rem solid $color-blue;
+
+      &:hover {
+        padding: 0 2rem 1.3rem;
+        border-bottom: .3rem solid $color-blue;
+      }
+
+    }
+
+  }
+
+}

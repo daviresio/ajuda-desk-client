@@ -388,6 +388,10 @@ h2 {
   transition: all 0.3s;
 }
 
+.config-font-toast {
+  font-size: 1.6rem;
+}
+
 *,
 *::before,
 *::after {
@@ -491,7 +495,7 @@ li {
   position: fixed;
   top: 0;
   left: 7rem;
-  z-index: 10;
+  z-index: 20;
   padding: 1.5rem 2rem;
   color: #2a343f;
 }
@@ -515,14 +519,39 @@ li {
 .topbar .paineis .button-container i {
   font-size: 1.6rem;
 }
-.topbar .opcoes {
+.topbar .lado-direito {
   display: flex;
   align-items: center;
 }
-.topbar .opcoes > i, .topbar .opcoes .user-box {
+.topbar .lado-direito .acoes {
+  margin-right: 2rem;
+}
+.topbar .lado-direito .separador {
+  width: 0.1rem;
+  height: 3rem;
+  background-color: rgba(200, 204, 207, 0.8);
+}
+.topbar .lado-direito .opcoes {
+  display: flex;
+  align-items: center;
+}
+.topbar .lado-direito .opcoes .click-para-pesquisar {
+  margin: 0 2rem;
+  border: 0.1rem solid rgba(200, 204, 207, 0.8);
+  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
   cursor: pointer;
 }
-.topbar .opcoes i {
+.topbar .lado-direito .opcoes .click-para-pesquisar i {
+  font-size: 1.2rem;
+}
+.topbar .lado-direito .opcoes .click-para-pesquisar span {
+  font-size: 1.4rem;
+}
+.topbar .lado-direito .opcoes > i, .topbar .lado-direito .opcoes .user-box {
+  cursor: pointer;
+}
+.topbar .lado-direito .opcoes i {
   margin-right: 1.5rem;
 }
 
@@ -795,6 +824,26 @@ button i {
   right: 1rem;
   top: 0.5rem;
   display: flex;
+}
+
+.dropdown-button-container {
+  position: relative;
+}
+.dropdown-button-container .dropdown-button-active {
+  box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.5);
+}
+.dropdown-button-container button {
+  padding-left: 0;
+  padding-right: 0;
+}
+.dropdown-button-container button span {
+  margin: 0 1rem;
+}
+.dropdown-button-container button i {
+  color: #6f7c87;
+}
+.dropdown-button-container .select-lista {
+  top: 4rem !important;
 }
 
 input[type=file] {
@@ -1139,6 +1188,56 @@ input[type=file] {
   background-color: #dee2e6;
 }
 
+.tab-menu {
+  background-color: #EBEFF3;
+  border: 0.1rem solid rgba(200, 204, 207, 0.5);
+  border-top: none;
+  padding: 1rem 1rem 0;
+}
+.tab-menu .tab {
+  cursor: pointer;
+  padding: 0 2rem 1.3rem;
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.3rem;
+  user-select: none;
+}
+.tab-menu .tab:hover {
+  border-bottom: 0.3rem solid #c5c8cc;
+  padding: 0 2rem 1rem;
+}
+.tab-menu .tab-active {
+  color: #2684FF;
+  border-bottom: 0.3rem solid #2684FF;
+}
+.tab-menu .tab-active:hover {
+  padding: 0 2rem 1.3rem;
+  border-bottom: 0.3rem solid #2684FF;
+}
+
+.content-dropdown {
+  padding: 2rem;
+  border-bottom: 0.1rem solid rgba(200, 204, 207, 0.3);
+  max-height: 5.3rem;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.content-dropdown-header {
+  cursor: pointer;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+.content-dropdown-title {
+  font-size: 1.3rem;
+}
+.content-dropdown i {
+  font-size: 1rem;
+}
+.content-dropdown-open {
+  max-height: 10rem;
+  transition: all 0.3s;
+}
+
 .home .resumos {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -1290,6 +1389,63 @@ input[type=file] {
   margin-left: 6rem;
 }
 
+.empresa-page {
+  display: flex;
+}
+.empresa-page .main-content-empresa-page {
+  width: calc(100% - 35rem);
+  min-height: calc(98vh - calc(6rem + 6rem));
+}
+.empresa-page .main-content-empresa-page .foto-container {
+  align-items: center;
+}
+.empresa-page .main-content-empresa-page .foto-container img {
+  width: 8rem;
+}
+.empresa-page .main-content-empresa-page .foto-container .inner-foto-container {
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 2rem;
+}
+.empresa-page .main-content-empresa-page .foto-container .inner-foto-container::after {
+  content: "";
+  width: 112%;
+  height: 112%;
+  border: 0.2rem solid rgba(200, 204, 207, 0.5);
+  position: absolute;
+  border-radius: 0.5rem;
+}
+.empresa-page .main-content-empresa-page .foto-container .inner-foto-container-empresa-empty {
+  background: linear-gradient(to top, #77D9D1, #abf3ee);
+  border-radius: 0.5rem;
+}
+.empresa-page .main-content-empresa-page .foto-container .inner-foto-container-empresa-empty img {
+  width: 4rem;
+}
+.empresa-page .main-content-empresa-page .foto-container .description h1 {
+  line-height: 0.5rem;
+}
+.empresa-page .main-content-empresa-page .foto-container .description .qtd-contatos {
+  font-size: 1.38rem;
+  margin: 0.3rem 0;
+}
+.empresa-page .main-content-empresa-page .tab-content {
+  margin: 1rem 8rem;
+}
+.empresa-page .second-content-empresa-page {
+  position: fixed;
+  width: 35rem;
+  right: 0;
+  top: calc(6rem + 6rem);
+  height: calc(calc(98vh - calc(6rem + 6rem)) + 2rem);
+  background-color: #F5F7F9;
+  border-left: 0.1rem solid rgba(200, 204, 207, 0.8);
+}
+
 .novo-contato-overlay .novo-contato-header {
   display: flex;
   padding: 0 4rem;
@@ -1426,6 +1582,15 @@ input[type=file] {
   font-size: 1.4rem;
   margin-bottom: 0.7rem;
   margin-left: 0.2rem;
+}
+
+.icon-no-rotate {
+  transition: all 0.3s;
+}
+
+.icon-rotate {
+  transform: rotateZ(180deg);
+  transition: all 0.3s;
 }
 
 .margin-top {

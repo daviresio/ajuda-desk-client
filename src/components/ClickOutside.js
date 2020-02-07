@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 
-const ClickOutside = ({clickOutside, children}) => {
+const ClickOutside = ({clickOutside, children, style}) => {
 
     const node = useRef()
 
@@ -19,7 +19,7 @@ const ClickOutside = ({clickOutside, children}) => {
     }
 
     return (
-        <div ref={node}>
+        <div ref={node} style={style}>
             {children}
         </div>
     );

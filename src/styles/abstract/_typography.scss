@@ -54,7 +54,10 @@ h2 {
     .text-deactive {
       color: $link-color;
       @include transition;
-    }
+    } 
   }
 }
 
+.config-font-toast {
+  font-size: 1.6rem;
+}

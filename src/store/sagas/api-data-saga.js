@@ -5,7 +5,7 @@ import api from '../../config/network'
 function* loadGrupos() {
     try {
     const {data} = yield call(api.get, '/grupos')
-        yield put({type: GRUPOS.LOADED_SUCCESS, payload: data})
+        yield put({type: GRUPOS.LIST_SUCCESS, payload: data})
     } catch (e) {
         yield put({type: GRUPOS.LOADED_ERROR, payload: e})
     }

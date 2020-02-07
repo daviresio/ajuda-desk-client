@@ -19,11 +19,14 @@
 @import "components/ticket";
 @import "components/user_box";
 @import "components/select";
+@import "components/tab_menu";
+@import "components/content_dropdown";
 
 @import "pages/home_page";
 @import "pages/tickets_page";
 @import "pages/admin_page";
 @import "pages/configuracoes_email_page";
+@import "pages/empresa_page";
 
 @import "overlay/novo_contato";
 @import "overlay/nova_empresa";

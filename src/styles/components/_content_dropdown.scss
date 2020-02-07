@@ -1,0 +1,27 @@
+.content-dropdown {
+  padding: 2rem;
+  border-bottom: .1rem solid rgba($color-border-primary, .3);
+  max-height: 5.3rem;
+  overflow: hidden;
+  @include transition;
+
+  &-header {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    user-select: none;
+  }
+
+  &-title {
+    font-size: 1.3rem;
+  }
+
+  i {
+    font-size: 1.0rem;
+  }
+
+  &-open {
+    max-height: 10rem;
+    @include transition;
+  }
+
+}

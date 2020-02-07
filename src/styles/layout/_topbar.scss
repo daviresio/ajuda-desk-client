@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: $navbar-width;
-  z-index: 10;
+  z-index: 20;
   padding: 1.5rem 2rem;
   color: $font-color-dark;
 
@@ -34,9 +34,40 @@
     }
   }
 
+  .lado-direito {
+    display: flex;
+    align-items: center;
+
+    .acoes {
+      margin-right: 2rem;
+    }
+
+    .separador {
+      width: .1rem;
+      height: 3rem;
+      background-color: $color-border-primary-dark;
+    }
+
   .opcoes {
     display: flex;
     align-items: center;
+
+    .click-para-pesquisar {
+      margin: 0 2rem;
+      border: .1rem solid $color-border-primary-dark;
+      border-radius: .5rem;
+      padding: .6rem 1rem;
+      cursor: pointer;
+
+      i {
+        font-size: 1.2rem;
+      }
+
+      span {
+        font-size: 1.4rem;
+      }
+
+    }
 
     & > i, .user-box {
       cursor: pointer;
@@ -47,5 +78,8 @@
     }
 
   }
+
+  }
+
 
 }
