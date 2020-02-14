@@ -10,7 +10,8 @@
 @import "layout/topbar";
 @import "layout/sub_topbar";
 @import "layout/layout";
-@import "layout/panel_right";
+@import "layout/panel";
+@import "layout/modal";
 
 @import "components/tooltip";
 @import "components/card";
@@ -21,6 +22,7 @@
 @import "components/select";
 @import "components/tab_menu";
 @import "components/content_dropdown";
+@import "components/table";
 
 @import "pages/home_page";
 @import "pages/tickets_page";

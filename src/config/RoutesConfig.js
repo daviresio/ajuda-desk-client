@@ -1,5 +1,7 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
+import { ConnectedRouter } from 'connected-react-router'
+import {history} from "./storeRoutes";
 import Painel from "../pages/Painel";
 import Layout from "../layout/Layout";
 import TicketsPage from "../pages/TicketsPage";
@@ -15,7 +17,7 @@ import EmpresaPage from "../pages/empresa/EmpresaPage";
 
 const RoutesConfig = () => {
     return (
-        <Router>
+        <ConnectedRouter history={history}>
             <Layout>
                 <Switch>
                     <Route path={'/painel'} component={Painel}/>
@@ -33,7 +35,7 @@ const RoutesConfig = () => {
                     <Redirect from={'/index.html'} to={'/painel'} exact={true} />
                 </Switch>
             </Layout>
-        </Router>
+        </ConnectedRouter>
     );
 };
 

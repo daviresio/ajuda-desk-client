@@ -39,6 +39,19 @@ button {
 
   }
 
+  &-red {
+    background-color: $color-red;
+
+    &:hover {
+      background-color: rgba($color-red, .9);
+    }
+
+    &:active {
+      background-color: rgba($color-red, .8);
+    }
+
+  }
+
 }
 
 //icon button begin

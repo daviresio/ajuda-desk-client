@@ -1,14 +1,10 @@
 .empresa-page {
   display: flex;
-
-  $second-content-width: 35rem;
+  padding-bottom: 10rem;
 
   .main-content-empresa-page {
-    width: calc(100% - #{$second-content-width});
-    min-height: $page-height;
 
     .foto-container {
-      align-items: center;
 
       img {
         width: 8rem;
@@ -62,26 +58,71 @@
   }
 
   .second-content-empresa-page {
-    position: fixed;
-    width: $second-content-width;
-    right: 0;
-    top: $topbars-height;
-    height: calc(#{$page-height} + 2rem);
-    background-color: $subtopbar-color;
-    border-left: .1rem solid $color-border-primary-dark;
+
+  }
+
+  &-anotacao {
+    overflow: hidden;
+
+    &-footer {
+      margin-top: 2rem;
+      justify-content: flex-end!important;
+    }
+
+    &-hidden {
+      max-height: 7.8rem;
+      @include transition-big;
+    }
+
+    &-visible {
+      max-height: 100rem;
+      @include transition-big;
+    }
+
+  }
+
+}
 
 
-    //display: grid;
-    //grid-template-columns: 1fr 5rem;
-    //overflow: hidden;
-    //.content-second-content-empresa-page {
-    //  border-right: .1rem solid $color-border-primary;
-    //  overflow: auto;
-    //}
-    //
-    //.options-second-content-empresa-page {
-    //
-    //}
+.empresas-page {
+
+  .first-content {
+    padding-bottom: 10rem;
+
+    table tr .descricao-empresa {
+      display: flex;
+      align-items: center;
+
+      &-content {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 2rem;
+
+        img {
+          width: 3.5rem;
+        }
+
+        .inner-foto-container {
+          margin-right: 2rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &-empresa-empty {
+            background: linear-gradient(to top, #77D9D1, #abf3ee);
+            border-radius: .5rem;
+
+            img {
+              width: 2rem;
+            }
+          }
+        }
+      }
+    }
 
   }
 

@@ -7,8 +7,11 @@ import Linq from "../../components/Linq";
 import TabMenu from "../../components/TabMenu";
 import {connect} from "react-redux";
 import {buscarEmpresa} from "../../store/actions/empresa-actions";
+import PageDividedSecondContentScrollable from "../../layout/PageDividedSecondContentScrollable";
+import Anotacao from "./components/Anotacao";
 
-const EmpresaPage = ({match, buscar, empresa}) => {
+const EmpresaPage = ({match, buscar, empresa = {}}) => {
+
 
     useEffect(() => {
         const {id} = match.params
@@ -20,53 +23,63 @@ const EmpresaPage = ({match, buscar, empresa}) => {
     const [tabSelected, setTabSelected] = useState(0)
 
     return (
-        <div className={'empresa-page'}>
-            <div className={'main-content-empresa-page'}>
-                <Card>
-                    <Row noSpace className={'foto-container'}>
-                        <div className={'inner-foto-container inner-foto-container-empresa-empty'}>
-                            <img src={emptyImage}/>
-                        </div>
-                        <Column className={'description'}>
-                            <Title>{empresa.nome}</Title>
-                            <Linq className={'qtd-contatos'}>1 Contato</Linq>
-                            <Row>
-                                <Linq>acmecorp.com</Linq>
-                            </Row>
-                        </Column>
-                    </Row>
-                </Card>
-                <TabMenu tabs={['LINHA DO TEMPO', 'TICKETS', 'ANOTACOES']} selected={i => setTabSelected(i)}/>
+        <PageDividedSecondContentScrollable className={'empresa-page'}
 
-                <div className={'tab-content'}>
-                    <Card>
+                                            first={
+                                                <div className={'main-content-empresa-page'}>
+                                                    <Card>
+                                                        <Row noSpace className={'foto-container'}>
+                                                            <div
+                                                                className={'inner-foto-container inner-foto-container-empresa-empty'}>
+                                                                <img src={emptyImage}/>
+                                                            </div>
 
-                    </Card>
-                </div>
+                                                            <Column className={'description'}>
+                                                                <Title>{empresa.nome}</Title>
+                                                                {empresa && empresa.contatos && empresa.contatos.length ?
+                                                                    <>
+                                                                <Linq className={'qtd-contatos'}>{`${empresa.contatos.length} Contatos`}</Linq>
+                                                                <Row noSpace>
+                                                                    {empresa && empresa.dominios && empresa.dominios.map((v, i) => i === 0 ?
+                                                                        <Linq key={v}>{v}</Linq> : <div> , <Linq key={v}>{v}</Linq></div>)}
+                                                                </Row>
+                                                                   </> : null}
+                                                            </Column>
+                                                        </Row>
+                                                    </Card>
+                                                    <TabMenu tabs={['LINHA DO TEMPO', 'TICKETS', 'ANOTACOES']}
+                                                             selected={i => setTabSelected(i)}/>
 
-            </div>
-            <div className={'second-content-empresa-page'}>
-                <div className={'content-second-content-empresa-page'}>
-                    <ContentDropdown title={`CONTATOS (1)`}>
-                        fsdgdfgxcvxcgbdfgfzgvbxcvgbcf
-                    </ContentDropdown>
-                    <ContentDropdown title={`POLITICAS DE SLA`}>
-                        <Linq>Politicas de SLA Padrao</Linq>
-                    </ContentDropdown>
-                    <ContentDropdown title={`DETALHES`}>
-                        <div className={'text-deactive margin-bottom'}>Tipo de conta</div>
-                        <span>Basica</span>
-                    </ContentDropdown>
-                    <ContentDropdown title={`TAREFAS`}>
-                        fsdgdfgxcvxcgbdfgfzgvbxcvgbcf
-                    </ContentDropdown>
+                                                    <div className={'tab-content'}>
+                                                        <Anotacao/>
+                                                    </div>
 
-                </div>
-                {/*<div className={'options-second-content-empresa-page'}>*/}
-                {/*    */}
-                {/*</div>*/}
-            </div>
-        </div>
+                                                </div>
+                                            }
+
+                                            second={
+                                                <div className={'second-content-empresa-page'}>
+                                                    <div className={'content-second-content-empresa-page'}>
+                                                        <ContentDropdown title={`CONTATOS (1)`}>
+                                                            fsdgdfgxcvxcgbdfgfzgvbxcvgbcf
+                                                        </ContentDropdown>
+                                                        <ContentDropdown title={`POLITICAS DE SLA`}>
+                                                            <Linq>Politicas de SLA Padrao</Linq>
+                                                        </ContentDropdown>
+                                                        <ContentDropdown title={`DETALHES`}>
+                                                            <div className={'text-deactive margin-bottom'}>Tipo de
+                                                                conta
+                                                            </div>
+                                                            <span>Basica</span>
+                                                        </ContentDropdown>
+                                                        <ContentDropdown title={`TAREFAS`}>
+                                                            fsdgdfgxcvxcgbdfgfzgvbxcvgbcf
+                                                        </ContentDropdown>
+
+                                                    </div>
+                                                </div>
+                                            }
+        />
     );
 };
 
@@ -75,7 +88,7 @@ const mapStateToProps = ({apiData}) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    buscar: (v) => dispatch(buscarEmpresa(v))
+    buscar: (v) => dispatch(buscarEmpresa(v)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EmpresaPage);

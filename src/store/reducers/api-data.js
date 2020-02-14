@@ -22,6 +22,9 @@ const apiData = (state = INITIAL_STATE, action) => {
             return {...state, empresas: action.payload}
         case EMPRESA.BUSCAR_SUCESSO:
             return {...state, empresa: action.payload}
+        case EMPRESA.EDITAR_SUCESSO:
+        case EMPRESA.CLEAR:
+            return {...state, empresa: INITIAL_STATE.empresa}
         default:
             return state
     }

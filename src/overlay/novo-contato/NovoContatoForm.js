@@ -84,7 +84,7 @@ const NovoContatoForm = ({close, willUnmount, salvar, empresas, pesquisarEmpresa
                             empresas: values.empresas.map(x => ({id: x.value, nome: x.label, principal: x.principal})),
                             emails: values.emails.map(x => ({id: x.value, nome: x.label, principal: x.principal})),
                         }
-                        console.log(salvar(values))
+                        console.log(salvar(v))
                     }}
                 >
                     {({values, handleSubmit, setFieldValue, submitForm, errors, touched, ...props}) => {

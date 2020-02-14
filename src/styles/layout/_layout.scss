@@ -10,22 +10,6 @@
 
 }
 
-.page-divided-with-second-content-scrolable {
-  display: grid;
-  grid-template-columns: 1fr 32rem;
-  grid-gap: 2rem;
-  min-height: $page-height;
-
-  .first-content {
-    min-height: $page-height;
-  }
-
-  .second-content {
-    overflow: auto;
-    max-height: $page-height;
-  }
-}
-
 .page-full-height {
   min-height: $page-height;
 }

@@ -5,7 +5,7 @@ import Icon from "../components/Icon";
 import UserBox from "../components/UserBox";
 import DropdownButton from "../components/button/DropdownButton";
 import {connect} from "react-redux";
-import {exibirPanelNovaEmpresa, exibirPanelNovoContato} from "../store/actions/panel-actions";
+import {openPanelCadastroEmpresa, exibirPanelNovoContato} from "../store/actions/panel-actions";
 
 const Topbar = ({novoContato, novaEmpresa}) => {
     return (
@@ -70,7 +70,7 @@ const mapStateToProps = ({}) => ({
 
 const mapDispatchToProps = dispatch => ({
     novoContato: () => dispatch(exibirPanelNovoContato()),
-    novaEmpresa: () => dispatch(exibirPanelNovaEmpresa()),
+    novaEmpresa: () => dispatch(openPanelCadastroEmpresa()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Topbar);

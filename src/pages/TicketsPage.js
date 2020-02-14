@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 import {listGrupos} from "../store/sagas/api-data-saga";
 import {Field, Formik} from "formik";
 import SelectContainer from "../components/form/SelectContainer";
+import PageDividedSecondContentScrollable from "../layout/PageDividedSecondContentScrollable";
 
 const TicketsPage = ({loadData, novoContato}) => {
 
@@ -14,88 +15,94 @@ const TicketsPage = ({loadData, novoContato}) => {
     }, [])
 
     return (
-        <div className={'tickets-page'}>
-            <div className={'content-ticket-page'}>
-            <Ticket/>
-            <Ticket/>
-            <Ticket/>
-            <Ticket/>
-            </div>
-            <div className={'filters'}>
-                <Subtitle>Filtros</Subtitle>
+        <PageDividedSecondContentScrollable className={'tickets-page'}
 
-                <Formik
-                    initialValues={{
-                        agentes: [],
-                        grupos: [],
-                        dataCriacao: null,
-                        resolucaoAte: [],
-                        primeiraRespostaAte: [],
-                        status: [],
-                        prioridade: [],
-                        tipo: [],
-                        origem: [],
-                        tags: [],
-                        empresas: [],
-                        inicioCompromisso: [],
-                        fimCompromisso: [],
-                    }}
+                                            first={
+                                                <div className={'content-ticket-page'}>
+                                                    <Ticket/>
+                                                    <Ticket/>
+                                                    <Ticket/>
+                                                    <Ticket/>
+                                                </div>
+                                            }
 
-                    onSubmit={(values, {setSubmiting}) => {
-                        console.log(values)
-                    }}
-                >
-                    {({values, handleSubmit, isSubmitting, handleChange, setFieldValue}) => (
-                        <form onSubmit={handleSubmit}>
-                            <SelectContainer marginTop={2} label={'Agentes'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('agentes', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Grupos'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('grupos', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Data Criacao'}>
-                                <Field component={Select} options={options} onChange={opt => setFieldValue('dataCriacao', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Resolucao ate'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('resolucaoAte', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Primeira resposta ate'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('primeiraRespostaAte', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Status'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('status', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Prioridade'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('prioridade', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Tipo'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('tipo', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Origem'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('origem', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Tags'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('tags', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Empresas'}>
-                                <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('empresas', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Inicio do compromisso'}>
-                                <Field component={Select} options={options} onChange={opt => setFieldValue('inicioCompromisso', opt)}/>
-                            </SelectContainer>
-                            <SelectContainer marginTop={2} label={'Fim do compromisso'}>
-                                <Field component={Select} options={options} onChange={opt => setFieldValue('fimCompromisso', opt)}/>
-                            </SelectContainer>
+                                            second={
+                                                <div className={'filters'}>
+                                                    <Subtitle>Filtros</Subtitle>
+
+                                                    <Formik
+                                                        initialValues={{
+                                                            agentes: [],
+                                                            grupos: [],
+                                                            dataCriacao: null,
+                                                            resolucaoAte: [],
+                                                            primeiraRespostaAte: [],
+                                                            status: [],
+                                                            prioridade: [],
+                                                            tipo: [],
+                                                            origem: [],
+                                                            tags: [],
+                                                            empresas: [],
+                                                            inicioCompromisso: [],
+                                                            fimCompromisso: [],
+                                                        }}
+
+                                                        onSubmit={(values, {setSubmiting}) => {
+                                                            console.log(values)
+                                                        }}
+                                                    >
+                                                        {({values, handleSubmit, isSubmitting, handleChange, setFieldValue}) => (
+                                                            <form onSubmit={handleSubmit}>
+                                                                <SelectContainer marginTop={2} label={'Agentes'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('agentes', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Grupos'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('grupos', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Data Criacao'}>
+                                                                    <Field component={Select} options={options} onChange={opt => setFieldValue('dataCriacao', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Resolucao ate'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('resolucaoAte', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Primeira resposta ate'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('primeiraRespostaAte', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Status'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('status', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Prioridade'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('prioridade', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Tipo'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('tipo', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Origem'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('origem', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Tags'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('tags', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Empresas'}>
+                                                                    <Field component={Select} isMulti options={options} onChange={opt => setFieldValue('empresas', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Inicio do compromisso'}>
+                                                                    <Field component={Select} options={options} onChange={opt => setFieldValue('inicioCompromisso', opt)}/>
+                                                                </SelectContainer>
+                                                                <SelectContainer marginTop={2} label={'Fim do compromisso'}>
+                                                                    <Field component={Select} options={options} onChange={opt => setFieldValue('fimCompromisso', opt)}/>
+                                                                </SelectContainer>
 
 
-                            <input type={'submit'}/>
+                                                                <input type={'submit'}/>
 
-                         </form>
-                        )}
-                </Formik>
+                                                            </form>
+                                                        )}
+                                                    </Formik>
 
-            </div>
-        </div>
+                                                </div>
+                                            }
+                                            />
     );
 };
 

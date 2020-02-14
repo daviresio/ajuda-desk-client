@@ -7,11 +7,11 @@ import NovaEmpresaForm from "./NovaEmpresaForm";
 
 
 
-const NovaEmpresa = ({visible, close, salvar}) => <DelayUnmount mount={visible}><NovaEmpresaForm
-    close={close} salvar={salvar}/></DelayUnmount>
+const NovaEmpresa = ({visible, close, salvar}) =>
+    <DelayUnmount mount={visible}><NovaEmpresaForm close={close} salvar={salvar}/></DelayUnmount>
 
 const mapStateToProps = ({panel}) => ({
-    visible: panel.novaEmpresa,
+    visible: panel.cadastroEmpresa.visible,
 })
 
 export default connect(mapStateToProps)(NovaEmpresa);

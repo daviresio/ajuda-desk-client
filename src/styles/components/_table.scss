@@ -1,0 +1,78 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: $subtopbar-color;
+    text-align: left;
+
+    tr {
+
+      th {
+      padding: 2rem 0;
+      font-weight: normal;
+
+      }
+
+      th:first-child {
+        padding-left: 3rem;
+      }
+
+    }
+
+  }
+
+  tbody {
+    tr {
+      background-color: $color-white;
+      @include transition;
+
+      &:hover {
+        background-color: $color-primary;
+        @include transition;
+
+        .options-button-table .options-button-table-container, .options-button-table-active {
+          border: .1rem solid $color-border-primary;
+        }
+
+      }
+
+      td {
+        padding: 1rem;
+        border-bottom: .1rem solid $color-primary;
+
+      }
+    }
+  }
+
+  .options-button-table {
+    width: 5rem;
+
+    .options-button-table-container {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: .5rem;
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+        background-color: $color-primary-dark;
+      }
+
+    }
+
+    .options-button-table-active {
+      box-shadow: inset 0 0 .6rem rgba(0, 0, 0, 0.5);
+    }
+
+    .select-lista {
+      top: 3rem;
+    }
+
+  }
+
+}
+

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import PanelRight from "../../layout/PanelRight";
 import Title from "../../components/Title";
@@ -13,8 +13,14 @@ import SelectContainer from "../../components/form/SelectContainer";
 import CreatableSelect from "react-select/creatable/dist/react-select.esm";
 import Select from "react-select";
 import * as Yup from "yup";
-import {dadosDefaultNovaEmpresa, salvarEmpresa} from "../../store/actions/empresa-actions";
-import {esconderPanelNovaEmpresa} from "../../store/actions/panel-actions";
+import {
+    buscarEmpresa,
+    dadosDefaultNovaEmpresa,
+    editarEmpresa,
+    salvarEmpresa
+} from "../../store/actions/empresa-actions";
+import {closePanelCadastroEmpresa} from "../../store/actions/panel-actions";
+import {prepareFormObj} from "../../util/util";
 
 
 const validadeSchema = Yup.object().shape({
@@ -24,12 +30,33 @@ const validadeSchema = Yup.object().shape({
 })
 
 
-const NovaEmpresaForm = ({scores, tipoPlanos, dataRenovacoes, tipoEmpresas, close, willUnmount, salvar, carregarDadosDefault}) => {
+const NovaEmpresaForm = ({scores, tipoPlanos, dataRenovacoes, tipoEmpresas, close, willUnmount, salvar, carregarDadosDefault, id, empresa, buscar, editar}) => {
 
+    const [initialValues, setInitialValues] = useState(
+        {
+            foto: '',
+            nome: '',
+            descricao: '',
+            anotacao: '',
+            score: 0,
+            tipo_plano: 0,
+            data_renovacao: null,
+            tipo_empresa: 0,
+            dominios: [],
+        }
+    )
 
     useEffect(() => {
         carregarDadosDefault()
     }, [])
+
+    useEffect(() => {
+        if(id) buscar(id)
+    }, [id])
+    
+    useEffect(() => {
+        if(empresa) setInitialValues(empresa)
+    }, [empresa])
 
         const emptyImage = require('../../assets/images/empty_image_empresa_logo.svg')
 
@@ -50,22 +77,11 @@ const NovaEmpresaForm = ({scores, tipoPlanos, dataRenovacoes, tipoEmpresas, clos
                     </p>
 
                     <Formik
-                        initialValues={{
-                            foto: '',
-                            nome: '',
-                            descricao: '',
-                            anotacao: '',
-                            score: 0,
-                            tipo_plano: 0,
-                            data_renovacao: null,
-                            tipo_empresa: 0,
-                            dominios: [
-
-                            ],
-                        }}
+                        initialValues={initialValues}
                         validationSchema={validadeSchema}
+                        enableReinitialize={true}
                         onSubmit={(values, {setSubmiting}) => {
-                            salvar(values)
+                            values.id ? editar(values) : salvar(values)
                         }}
                     >
                         {({values, handleSubmit, setFieldValue, submitForm, errors, touched, ...props}) => {
@@ -131,17 +147,21 @@ const NovaEmpresaForm = ({scores, tipoPlanos, dataRenovacoes, tipoEmpresas, clos
     }
 
 
-const mapStateToProps = ({apiData}) => ({
+const mapStateToProps = ({apiData, panel}) => ({
     scores: apiData.scores.map(v => ({label: v.nome, value: v.id})),
     tipoPlanos: apiData.tipoPlanos,
     dataRenovacoes: apiData.dataRenovacoes,
     tipoEmpresas: apiData.tipoEmpresas,
+    id: panel.cadastroEmpresa.id,
+    empresa: prepareFormObj(apiData.empresa),
 })
 
 const mapDispatchToProps = dispatch => ({
-    close: () => dispatch(esconderPanelNovaEmpresa()),
+    close: () => dispatch(closePanelCadastroEmpresa()),
     salvar: (v) => dispatch(salvarEmpresa(v)),
-    carregarDadosDefault: () => dispatch(dadosDefaultNovaEmpresa())
+    carregarDadosDefault: () => dispatch(dadosDefaultNovaEmpresa()),
+    buscar: (v) => dispatch(buscarEmpresa(v)),
+    editar: (v) => dispatch(editarEmpresa(v)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NovaEmpresaForm);

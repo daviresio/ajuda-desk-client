@@ -488,6 +488,24 @@ li {
   overflow: auto;
 }
 
+.page-divided-with-second-content-scrolable {
+  min-height: calc(98vh - calc(6rem + 6rem));
+  width: calc(100% - 35rem);
+}
+.page-divided-with-second-content-scrolable .first-content {
+  width: 100%;
+}
+.page-divided-with-second-content-scrolable .second-content {
+  position: fixed;
+  width: 35rem;
+  right: 0;
+  top: calc(6rem + 6rem);
+  height: calc(calc(98vh - calc(6rem + 6rem)) + 2rem);
+  background-color: #F5F7F9;
+  border-left: 0.1rem solid rgba(200, 204, 207, 0.8);
+  overflow: auto;
+}
+
 .topbar {
   height: 6rem;
   background-color: #FFF;
@@ -581,20 +599,6 @@ li {
   top: calc(6rem + 6rem);
   left: 7rem;
   overflow: hidden;
-}
-
-.page-divided-with-second-content-scrolable {
-  display: grid;
-  grid-template-columns: 1fr 32rem;
-  grid-gap: 2rem;
-  min-height: calc(98vh - calc(6rem + 6rem));
-}
-.page-divided-with-second-content-scrolable .first-content {
-  min-height: calc(98vh - calc(6rem + 6rem));
-}
-.page-divided-with-second-content-scrolable .second-content {
-  overflow: auto;
-  max-height: calc(98vh - calc(6rem + 6rem));
 }
 
 .page-full-height {
@@ -702,6 +706,82 @@ li {
     transform: translateX(100%);
   }
 }
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(116, 132, 144, 0.6);
+  z-index: 100;
+}
+.modal .modal-content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70rem;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  overflow: hidden;
+}
+.modal .modal-content .modal-header {
+  height: 5rem;
+  padding: 2rem;
+}
+.modal .modal-content .modal-header i {
+  cursor: pointer;
+}
+.modal .modal-content .modal-body {
+  padding: 0 2rem 2rem;
+}
+.modal .modal-content .modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 7rem;
+  border-top: 0.1rem solid #c5c8cc;
+  padding-right: 4rem;
+  background-color: #EBEFF3;
+}
+.modal .modal-content .modal-footer button {
+  min-width: 10rem;
+}
+
+.modal-top-enter-animation {
+  animation: opacity-enter 0.5s linear;
+}
+.modal-top-enter-animation .modal-content {
+  animation: modal-top-position-enter 0.5s ease-in-out;
+}
+
+.modal-top-leave-animation {
+  animation: opacity-leave 0.5s linear;
+}
+.modal-top-leave-animation .modal-content {
+  animation: modal-top-position-leave 0.5s ease-in-out;
+}
+
+@keyframes modal-top-position-enter {
+  0% {
+    transform: translateY(-100%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+}
+@keyframes modal-top-position-leave {
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  100% {
+    transform: translateY(-100%) translateX(-50%);
+  }
+}
 .card {
   background-color: #FFF;
   border-radius: 0.4rem;
@@ -749,6 +829,15 @@ button i {
 }
 .button-color-dark:active {
   background-color: rgba(24, 50, 71, 0.8);
+}
+.button-color-red {
+  background-color: #FF5959;
+}
+.button-color-red:hover {
+  background-color: rgba(255, 89, 89, 0.9);
+}
+.button-color-red:active {
+  background-color: rgba(255, 89, 89, 0.8);
 }
 
 .icon-button {
@@ -1012,6 +1101,53 @@ input[type=file] {
   background-color: #2C5CC5;
 }
 
+.checkbox-container {
+  position: relative;
+}
+.checkbox-container input[type=checkbox] {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+.checkbox-container label {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid #c5c8cc;
+  background-color: #FFF;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.checkbox-container label:hover {
+  border: 0.1rem solid #2C5CC5;
+  transition: all 0.3s;
+}
+.checkbox-container input[type=checkbox]:checked + label {
+  border: 0.1rem solid #2C5CC5;
+}
+.checkbox-container input[type=checkbox]:checked + label::before {
+  content: "";
+  background-color: #2C5CC5;
+  position: absolute;
+  width: 92%;
+  height: 92%;
+  top: 0.1rem;
+  left: 0.05rem;
+  border-radius: 0.2rem;
+  transition: all 0.3s;
+}
+.checkbox-container i {
+  color: #FFF;
+  position: absolute;
+  left: 0.4rem;
+  top: 0.4rem;
+  font-size: 0.8rem;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
 .ticket {
   display: flex;
   align-items: center;
@@ -1238,6 +1374,59 @@ input[type=file] {
   transition: all 0.3s;
 }
 
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table thead {
+  background-color: #F5F7F9;
+  text-align: left;
+}
+.table thead tr th {
+  padding: 2rem 0;
+  font-weight: normal;
+}
+.table thead tr th:first-child {
+  padding-left: 3rem;
+}
+.table tbody tr {
+  background-color: #FFF;
+  transition: all 0.3s;
+}
+.table tbody tr:hover {
+  background-color: #EBEFF3;
+  transition: all 0.3s;
+}
+.table tbody tr:hover .options-button-table .options-button-table-container, .table tbody tr:hover .options-button-table-active {
+  border: 0.1rem solid rgba(200, 204, 207, 0.5);
+}
+.table tbody tr td {
+  padding: 1rem;
+  border-bottom: 0.1rem solid #EBEFF3;
+}
+.table .options-button-table {
+  width: 5rem;
+}
+.table .options-button-table .options-button-table-container {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+.table .options-button-table .options-button-table-container:hover {
+  background-color: #dee2e6;
+}
+.table .options-button-table .options-button-table-active {
+  box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.5);
+}
+.table .options-button-table .select-lista {
+  top: 3rem;
+}
+
 .home .resumos {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -1306,20 +1495,8 @@ input[type=file] {
   min-height: 20rem;
 }
 
-.tickets-page .content-ticket-page {
-  width: calc(100% - 35rem);
-  min-height: calc(98vh - calc(6rem + 6rem));
-}
 .tickets-page .filters {
-  width: 35rem;
-  height: calc(98vh - calc(6rem + 6rem));
-  position: fixed;
-  top: calc(6rem + 6rem);
-  right: 0;
-  background-color: #EBEFF3;
-  border-left: 0.1rem solid rgba(200, 204, 207, 0.8);
   padding: 2rem;
-  overflow: auto;
 }
 
 .admin-page {
@@ -1391,13 +1568,7 @@ input[type=file] {
 
 .empresa-page {
   display: flex;
-}
-.empresa-page .main-content-empresa-page {
-  width: calc(100% - 35rem);
-  min-height: calc(98vh - calc(6rem + 6rem));
-}
-.empresa-page .main-content-empresa-page .foto-container {
-  align-items: center;
+  padding-bottom: 10rem;
 }
 .empresa-page .main-content-empresa-page .foto-container img {
   width: 8rem;
@@ -1436,14 +1607,53 @@ input[type=file] {
 .empresa-page .main-content-empresa-page .tab-content {
   margin: 1rem 8rem;
 }
-.empresa-page .second-content-empresa-page {
-  position: fixed;
-  width: 35rem;
-  right: 0;
-  top: calc(6rem + 6rem);
-  height: calc(calc(98vh - calc(6rem + 6rem)) + 2rem);
-  background-color: #F5F7F9;
-  border-left: 0.1rem solid rgba(200, 204, 207, 0.8);
+.empresa-page-anotacao {
+  overflow: hidden;
+}
+.empresa-page-anotacao-footer {
+  margin-top: 2rem;
+  justify-content: flex-end !important;
+}
+.empresa-page-anotacao-hidden {
+  max-height: 7.8rem;
+  transition: all 0.5s;
+}
+.empresa-page-anotacao-visible {
+  max-height: 100rem;
+  transition: all 0.5s;
+}
+
+.empresas-page .first-content {
+  padding-bottom: 10rem;
+}
+.empresas-page .first-content table tr .descricao-empresa {
+  display: flex;
+  align-items: center;
+}
+.empresas-page .first-content table tr .descricao-empresa-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+.empresas-page .first-content table tr .descricao-empresa-content img {
+  width: 3.5rem;
+}
+.empresas-page .first-content table tr .descricao-empresa-content .inner-foto-container {
+  margin-right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.empresas-page .first-content table tr .descricao-empresa-content .inner-foto-container-empresa-empty {
+  background: linear-gradient(to top, #77D9D1, #abf3ee);
+  border-radius: 0.5rem;
+}
+.empresas-page .first-content table tr .descricao-empresa-content .inner-foto-container-empresa-empty img {
+  width: 2rem;
 }
 
 .novo-contato-overlay .novo-contato-header {
