@@ -63,6 +63,22 @@
 
   &-anotacao {
     overflow: hidden;
+    margin-top: 3rem;
+
+    .title-anotacao {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 3rem;
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+      }
+      .input-container {
+        flex-grow: 1;
+      }
+
+    }
 
     &-footer {
       margin-top: 2rem;

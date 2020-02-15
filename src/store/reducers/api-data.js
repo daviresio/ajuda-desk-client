@@ -1,12 +1,12 @@
 import {GRUPOS} from "../actions/api-request-actions";
-import {EMPRESA, SCORE} from "../actions/empresa-actions";
+import {EMPRESA, SCORE, TIPO_EMPRESA, TIPO_PLANO} from "../actions/empresa-actions";
 
 const INITIAL_STATE = {
     grupos: [],
     scores: [],
+    tipoEmpresas: [],
     tipoPlanos: [],
     dataRenovacoes: [],
-    tipoEmpresas: [],
     empresas: [],
     empresa: {},
     error: null,
@@ -18,6 +18,10 @@ const apiData = (state = INITIAL_STATE, action) => {
             return {...state, grupos: action.payload}
         case SCORE.REQUEST_LIST_SUCESSO:
             return {...state, scores: action.payload}
+        case TIPO_EMPRESA.REQUEST_LIST_SUCESSO:
+            return {...state, tipoEmpresas: action.payload}
+        case TIPO_PLANO.REQUEST_LIST_SUCESSO:
+            return {...state, tipoPlanos: action.payload}
         case EMPRESA.LIST_SUCESSO:
             return {...state, empresas: action.payload}
         case EMPRESA.BUSCAR_SUCESSO:

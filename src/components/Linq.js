@@ -8,7 +8,7 @@ const Linq = ({children, onClick, block, noDecoration, className}) => {
     if(className) c = c + ` ${className}`
 
     const handleClick = () => {
-        if(!block) onClick()
+        if(!block && onClick) onClick()
     }
 
     return (

@@ -24,6 +24,16 @@ export const SCORE = {
     REQUEST_LIST_ERROR: 'SCORE_LIST_ERROR',
 }
 
+export const TIPO_EMPRESA = {
+    REQUEST_LIST_SUCESSO: 'TIPO_EMPRESA_LIST_SUCCESS',
+    REQUEST_LIST_ERROR: 'TIPO_EMPRESA_LIST_ERROR',
+}
+
+export const TIPO_PLANO = {
+    REQUEST_LIST_SUCESSO: 'TIPO_PLANO_LIST_SUCCESS',
+    REQUEST_LIST_ERROR: 'TIPO_PLANO_LIST_ERROR',
+}
+
 export const pesquisarEmpresas = (v) => ({type: EMPRESA.PESQUISAR, payload: v})
 
 export const listarEmpresas = () => ({type: EMPRESA.LISTAR})

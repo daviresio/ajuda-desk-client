@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb1a1b01-e6f3-46da-9077-90159a533748" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/empresa/child-routes/LinhaDoTempo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/empresa/child-routes/Tickets.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/anotacao-actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/sagas/anotacao-saga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/empresa/anotacao.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TabMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Linq.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Linq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/Input.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/overlay/cadastro-empresa/NovaEmpresaForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/cadastro-empresa/NovaEmpresaForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/empresa/EmpresaPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/EmpresaPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/empresa/EmpresasPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/EmpresasPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/empresa/components/Anotacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/child-routes/Anotacao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/empresa/child-routes/Anotacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/child-routes/Anotacao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/empresa-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/empresa-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/api-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/api-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/sagas/anotacao-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/anotacao-saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/sagas/empresa-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/empresa-saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/pages/_empresa_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/pages/_empresa_page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +71,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -188,6 +190,8 @@
       <workItem from="1581680827410" duration="5000" />
       <workItem from="1581682428894" duration="688000" />
       <workItem from="1581714145631" duration="8331000" />
+      <workItem from="1581764753908" duration="7000" />
+      <workItem from="1581778681439" duration="13142000" />
     </task>
     <servers />
   </component>
@@ -240,17 +244,17 @@
     </state>
     <state width="2467" height="271" key="GridCell.Tab.0.right/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581731750551" />
     <state width="1577" height="275" key="GridCell.Tab.0.right/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
-    <state x="2495" y="185" width="1022" height="737" key="SettingsEditor" timestamp="1579454309708">
+    <state x="2495" y="185" width="1022" height="737" key="SettingsEditor" timestamp="1581808214817">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state x="2495" y="185" width="1022" height="737" key="SettingsEditor/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1579454309708" />
+    <state x="2495" y="185" width="1022" height="737" key="SettingsEditor/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581808214817" />
     <state x="2419" y="252" key="run.anything.popup" timestamp="1580077423297">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
     <state x="2419" y="252" key="run.anything.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1580077423297" />
-    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581732946871">
+    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581804333192">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581732946871" />
+    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581804333192" />
   </component>
 </project>

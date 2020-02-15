@@ -1,13 +1,17 @@
 export const generateId = () => '_' + Math.random().toString(36).substr(2, 9)
 
-export const replaceNullValues = (obj, target = null, replacement = '') => {
+export const replaceNullValues = (obj, array = [], ignore = []) => {
     obj = {...obj};
     Object.keys(obj).forEach((key) => {
-        if (obj[key] === target) {
-            obj[key] = replacement;
-        } else if (typeof obj[key] == 'object' && !Array.isArray(obj[key])) {
-            obj[key] = replaceNullValues(obj[key]);
+        if (ignore.findIndex(x => x === key) === -1 && obj[key] === null) {
+            if (array.findIndex(x => x === key) !== -1) {
+                obj[key] = []
+            } else {
+                obj[key] = ''
+            }
         }
     });
     return obj;
 }
+
+export const noneSelectValue = {label: '---', value: 0}

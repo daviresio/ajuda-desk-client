@@ -36,27 +36,45 @@ const EmpresaPage = ({match, buscar, empresa = {}, location}) => {
 
                                                             <Column className={'description'}>
                                                                 <Title>{empresa.nome}</Title>
-                                                                {empresa && empresa.contatos && empresa.contatos.length ?
-                                                                    <>
-                                                                <Linq className={'qtd-contatos'}>{`${empresa.contatos.length} Contatos`}</Linq>
-                                                                <Row noSpace>
-                                                                    {empresa && empresa.dominios && empresa.dominios.map((v, i) => i === 0 ?
-                                                                        <Linq key={v}>{v}</Linq> : <div> , <Linq key={v}>{v}</Linq></div>)}
-                                                                </Row>
-                                                                   </> : null}
+                                                                <>
+                                                                    {empresa && empresa.contatos && empresa.contatos.length ?
+                                                                        <Linq
+                                                                            className={'qtd-contatos'}>{`${empresa.contatos.length} Contatos`}</Linq> : null}
+
+                                                                    <Row noSpace className={'margin-top'}>
+                                                                        {empresa && empresa.dominios && empresa.dominios.map((v, i) => i === 0 ?
+                                                                            <Linq key={v}>{v}</Linq> :
+                                                                            <div key={v}> , <Linq key={v}>{v}</Linq>
+                                                                            </div>)}
+                                                                    </Row>
+                                                                </>
                                                             </Column>
                                                         </Row>
                                                     </Card>
                                                     <TabMenu tabs={[
-                                                        {label: 'LINHA DO TEMPO', route: `/empresas/${match.params.id}/linha-do-tempo`, active: location.pathname.match(/\/linha-do-tempo$/)},
-                                                        {label: 'TICKETS', route: `/empresas/${match.params.id}/tickets`, active: location.pathname.match(/\/tickets$/)},
-                                                        {label: 'ANOTACOES', route: `/empresas/${match.params.id}/anotacoes`, active: location.pathname.match(/\/anotacoes$/)},
-                                                        ]}/>
+                                                        {
+                                                            label: 'LINHA DO TEMPO',
+                                                            route: `/empresas/${match.params.id}/linha-do-tempo`,
+                                                            active: location.pathname.match(/\/linha-do-tempo$/)
+                                                        },
+                                                        {
+                                                            label: 'TICKETS',
+                                                            route: `/empresas/${match.params.id}/tickets`,
+                                                            active: location.pathname.match(/\/tickets$/)
+                                                        },
+                                                        {
+                                                            label: 'ANOTACOES',
+                                                            route: `/empresas/${match.params.id}/anotacoes`,
+                                                            active: location.pathname.match(/\/anotacoes$/)
+                                                        },
+                                                    ]}/>
                                                     <div className={'tab-content'}>
-                                                    <Route path={'/empresas/:id/linha-do-tempo'} component={LinhaDoTempo}/>
-                                                    <Route path={'/empresas/:id/tickets'} component={Tickets}/>
-                                                    <Route path={'/empresas/:id/anotacoes'} component={Anotacao}/>
-                                                    <Redirect from={'empresas/:id'} exact={true} to={`/empresas/${match.params.id}/linha-do-tempo`} />
+                                                        <Route path={'/empresas/:id/linha-do-tempo'}
+                                                               component={LinhaDoTempo}/>
+                                                        <Route path={'/empresas/:id/tickets'} component={Tickets}/>
+                                                        <Route path={'/empresas/:id/anotacoes'} component={Anotacao}/>
+                                                        <Redirect from={'/empresas/:id'} exact={true}
+                                                                  to={`/empresas/${match.params.id}/linha-do-tempo`}/>
                                                     </div>
 
                                                 </div>
@@ -72,9 +90,7 @@ const EmpresaPage = ({match, buscar, empresa = {}, location}) => {
                                                             <Linq>Politicas de SLA Padrao</Linq>
                                                         </ContentDropdown>
                                                         <ContentDropdown title={`DETALHES`}>
-                                                            <div className={'text-deactive margin-bottom'}>Tipo de
-                                                                conta
-                                                            </div>
+                                                            <div className={'text-deactive margin-bottom'}>Tipo de conta</div>
                                                             <span>Basica</span>
                                                         </ContentDropdown>
                                                         <ContentDropdown title={`TAREFAS`}>

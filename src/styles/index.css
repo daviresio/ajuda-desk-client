@@ -1609,6 +1609,19 @@ input[type=file] {
 }
 .empresa-page-anotacao {
   overflow: hidden;
+  margin-top: 3rem;
+}
+.empresa-page-anotacao .title-anotacao {
+  display: flex;
+  align-items: center;
+}
+.empresa-page-anotacao .title-anotacao img {
+  width: 3rem;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+}
+.empresa-page-anotacao .title-anotacao .input-container {
+  flex-grow: 1;
 }
 .empresa-page-anotacao-footer {
   margin-top: 2rem;

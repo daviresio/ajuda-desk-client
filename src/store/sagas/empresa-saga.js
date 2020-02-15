@@ -1,6 +1,6 @@
 import {all, call, put, takeEvery} from "redux-saga/effects";
 import api from "../../config/network";
-import {EMPRESA, listarEmpresas, SCORE} from "../actions/empresa-actions";
+import {EMPRESA, listarEmpresas, SCORE, TIPO_EMPRESA, TIPO_PLANO} from "../actions/empresa-actions";
 import { toast } from "react-toastify";
 import {closeModalExcluirEmpresa, closePanelCadastroEmpresa} from "../actions/panel-actions";
 import { push } from 'connected-react-router'
@@ -17,9 +17,17 @@ function* pesquisar({payload: v}) {
 
 function* dadosDefaultRequest() {
     try {
-        const {data} = yield call(api.get, '/scores')
-        yield put({type: SCORE.REQUEST_LIST_SUCESSO, payload: data})
+        const {data: scores} = yield call(api.get, '/scores')
+        yield put({type: SCORE.REQUEST_LIST_SUCESSO, payload: scores})
+
+        const {data: tipoEmpresas} = yield call(api.get, '/tipo-empresas')
+        yield put({type: TIPO_EMPRESA.REQUEST_LIST_SUCESSO, payload: tipoEmpresas})
+
+        const {data: tipoPlanos} = yield call(api.get, '/tipo-planos')
+        yield put({type: TIPO_PLANO.REQUEST_LIST_SUCESSO, payload: tipoPlanos})
+
     } catch (e) {
+        console.log(e)
         yield put({type: SCORE.REQUEST_LIST_ERROR, payload: e})
     }
 }

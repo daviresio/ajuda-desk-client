@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Card from "../../../components/card/Card";
 import Input from "../../../components/form/Input";
 import {Editor} from "@tinymce/tinymce-react";
@@ -17,10 +17,6 @@ import Subtitle from "../../../components/Subtitle";
 
 const Anotacao = ({anotacoes, save, formVisible, exibirForm, esconderForm, match, formValue, changeFormValue}) => {
 
-    useEffect(() => {
-                console.log(match)
-    }, [anotacoes])
-
 
     const handleEditorChange = (content, editor) => {
         changeFormValue({...formValue, conteudo: content})
@@ -35,8 +31,7 @@ const Anotacao = ({anotacoes, save, formVisible, exibirForm, esconderForm, match
     }
 
     const handleSubmit = () => {
-        const value = {}
-        value.empresa_id = match.params.id
+        const value = {...formValue, empresa_id: Number(match.params.id)}
         save(value)
     }
 
@@ -44,8 +39,10 @@ const Anotacao = ({anotacoes, save, formVisible, exibirForm, esconderForm, match
         <>
             <Card
                 className={formVisible ? 'empresa-page-anotacao empresa-page-anotacao-visible' : 'empresa-page-anotacao empresa-page-anotacao-hidden'}>
-                <Input placeholder={'Sobre oque `e esta anotacao?'} className={'margin-bottom-2'}
-                       onClickContainer={showContent}/>
+                <div className={'title-anotacao'}>
+                    <img src={require('../../../assets/images/empresa/anotacao.svg')} alt={'anotacao'}/>
+                <Input placeholder={'Sobre oque `e esta anotacao?'} className={'margin-bottom-2'} onClickContainer={showContent}/>
+                </div>
                 <Editor
                     apiKey={'pyq2hmb4zvj2o7kq39stpr7kp6w0onsutdnh1hwshn7omlgs'}
                     initialValue={""}
@@ -53,15 +50,11 @@ const Anotacao = ({anotacoes, save, formVisible, exibirForm, esconderForm, match
                     init={{
                         height: 500,
                         menubar: false,
-                        plugins: [
-                            'advlist autolink lists link image charmap print preview anchor',
-                            'searchreplace visualblocks code fullscreen',
-                            'insertdatetime media table paste code help wordcount'
-                        ],
+                        plugins: [],
                         toolbar:
                             'undo redo | formatselect | bold italic backcolor | \
                             alignleft aligncenter alignright alignjustify | \
-                            bullist numlist outdent indent | removeformat | help',
+                            bullist numlist outdent indent | removeformat',
                         paste_data_images: true,
                     }}
                     onEditorChange={handleEditorChange}
@@ -72,10 +65,10 @@ const Anotacao = ({anotacoes, save, formVisible, exibirForm, esconderForm, match
                 </Row>
             </Card>
 
-            {anotacoes ? anotacoes.map(v =>
-            <Card>
+            {anotacoes ? anotacoes.map((v, i) =>
+            <Card className={'margin-top-2'} key={i}>
                 <Subtitle>{v.titulo}</Subtitle>
-                <div>{v.conteudo}</div>
+                <div dangerouslySetInnerHTML={{__html: v.conteudo}} />
             </Card>
             ) : null}
         </>
