@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Route, Redirect} from 'react-router-dom'
 import Card from "../../components/card/Card";
 import Row from "../../components/Row";
 import Column from "../../components/Column";
@@ -8,19 +9,18 @@ import TabMenu from "../../components/TabMenu";
 import {connect} from "react-redux";
 import {buscarEmpresa} from "../../store/actions/empresa-actions";
 import PageDividedSecondContentScrollable from "../../layout/PageDividedSecondContentScrollable";
-import Anotacao from "./components/Anotacao";
+import Anotacao from "./child-routes/Anotacao";
+import LinhaDoTempo from "./child-routes/LinhaDoTempo";
+import Tickets from "./child-routes/Tickets";
 
-const EmpresaPage = ({match, buscar, empresa = {}}) => {
+const EmpresaPage = ({match, buscar, empresa = {}, location}) => {
 
 
     useEffect(() => {
-        const {id} = match.params
-        buscar(id)
-    }, [match.params])
+        buscar(match.params.id)
+    }, [])
 
     const emptyImage = require('../../assets/images/empty_image_empresa_logo.svg')
-
-    const [tabSelected, setTabSelected] = useState(0)
 
     return (
         <PageDividedSecondContentScrollable className={'empresa-page'}
@@ -47,11 +47,16 @@ const EmpresaPage = ({match, buscar, empresa = {}}) => {
                                                             </Column>
                                                         </Row>
                                                     </Card>
-                                                    <TabMenu tabs={['LINHA DO TEMPO', 'TICKETS', 'ANOTACOES']}
-                                                             selected={i => setTabSelected(i)}/>
-
+                                                    <TabMenu tabs={[
+                                                        {label: 'LINHA DO TEMPO', route: `/empresas/${match.params.id}/linha-do-tempo`, active: location.pathname.match(/\/linha-do-tempo$/)},
+                                                        {label: 'TICKETS', route: `/empresas/${match.params.id}/tickets`, active: location.pathname.match(/\/tickets$/)},
+                                                        {label: 'ANOTACOES', route: `/empresas/${match.params.id}/anotacoes`, active: location.pathname.match(/\/anotacoes$/)},
+                                                        ]}/>
                                                     <div className={'tab-content'}>
-                                                        <Anotacao/>
+                                                    <Route path={'/empresas/:id/linha-do-tempo'} component={LinhaDoTempo}/>
+                                                    <Route path={'/empresas/:id/tickets'} component={Tickets}/>
+                                                    <Route path={'/empresas/:id/anotacoes'} component={Anotacao}/>
+                                                    <Redirect from={'empresas/:id'} exact={true} to={`/empresas/${match.params.id}/linha-do-tempo`} />
                                                     </div>
 
                                                 </div>

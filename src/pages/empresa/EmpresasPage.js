@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Table from "../../components/table/Table";
 import {connect} from "react-redux";
-import {editarEmpresa, listarEmpresas} from "../../store/actions/empresa-actions";
+import {listarEmpresas} from "../../store/actions/empresa-actions";
 import OptionsButtonTable from "../../components/table/OptionsButtonTable";
 import PageDividedSecondContentScrollable from "../../layout/PageDividedSecondContentScrollable";
 import {openModalExcluirEmpresa, openPanelCadastroEmpresa} from "../../store/actions/panel-actions";
@@ -10,8 +10,6 @@ import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 
 const EmpresasPage = ({empresas, listData, excluir, history, editar}) => {
-
-    const [valuesSelected, setValuesSelected] = useState([])
 
     useEffect(() => {
         listData()

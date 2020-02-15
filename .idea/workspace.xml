@@ -2,49 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb1a1b01-e6f3-46da-9077-90159a533748" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/table/OptionsButtonTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/table/Table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/storeRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layout/ModalTop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overlay/ModalExclusaoEmpresa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/empresa/components/Anotacao.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/sagas/panel-saga.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/components/_table.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/layout/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/empresa/child-routes/LinhaDoTempo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/empresa/child-routes/Tickets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/anotacao-actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/sagas/anotacao-saga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/Checkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/Checkbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/RoutesConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/RoutesConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/PageDividedSecondContentScrollable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/PageDividedSecondContentScrollable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/Topbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/Topbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overlay/Overlays.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/Overlays.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overlay/nova-empresa/NovaEmpresa.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/cadastro-empresa/NovaEmpresa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overlay/nova-empresa/NovaEmpresaForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/cadastro-empresa/NovaEmpresaForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overlay/novo-contato/NovoContatoForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/novo-contato/NovoContatoForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TicketsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TicketsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TabMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overlay/cadastro-empresa/NovaEmpresaForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/cadastro-empresa/NovaEmpresaForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/empresa/EmpresaPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/EmpresaPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/empresa/EmpresasPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/EmpresasPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/empresa-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/empresa-actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/panel-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/panel-actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/api-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/api-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/panel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/panel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/root-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/empresa-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/empresa-saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/empresa/components/Anotacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/child-routes/Anotacao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/control.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/layout/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout/_layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/layout/_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout/_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/layout/_panel_right.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout/_panel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/pages/_empresa_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/pages/_empresa_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/pages/_tickets_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/pages/_tickets_page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/overlay" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/store/sagas" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -103,19 +72,19 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/store/sagas" />
+      <recent name="$PROJECT_DIR$/src/store/actions" />
+      <recent name="$PROJECT_DIR$/src/overlay" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
+      <recent name="$PROJECT_DIR$/src/components/form" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/table" />
       <recent name="$PROJECT_DIR$/src/store/sagas" />
       <recent name="$PROJECT_DIR$/src/pages/empresa" />
       <recent name="$PROJECT_DIR$/src/overlay/novo-contato" />
       <recent name="$PROJECT_DIR$/src/store/actions" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/overlay" />
-      <recent name="$PROJECT_DIR$/src/assets/images" />
-      <recent name="$PROJECT_DIR$/src/components/form" />
-      <recent name="$PROJECT_DIR$/src/components/ticket" />
-      <recent name="$PROJECT_DIR$/src/styles/scss/pages" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -217,6 +186,8 @@
       <workItem from="1581643340131" duration="2315000" />
       <workItem from="1581678220703" duration="16000" />
       <workItem from="1581680827410" duration="5000" />
+      <workItem from="1581682428894" duration="688000" />
+      <workItem from="1581714145631" duration="8331000" />
     </task>
     <servers />
   </component>
@@ -249,25 +220,25 @@
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
     <state x="2459" y="354" width="424" height="491" key="FileChooserDialogImpl/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581279205542" />
-    <state width="2467" height="271" key="GridCell.Tab.0.bottom" timestamp="1581645987491">
+    <state width="2467" height="271" key="GridCell.Tab.0.bottom" timestamp="1581731750551">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state width="2467" height="271" key="GridCell.Tab.0.bottom/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581645987491" />
+    <state width="2467" height="271" key="GridCell.Tab.0.bottom/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581731750551" />
     <state width="1577" height="275" key="GridCell.Tab.0.bottom/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
-    <state width="2467" height="271" key="GridCell.Tab.0.center" timestamp="1581645987491">
+    <state width="2467" height="271" key="GridCell.Tab.0.center" timestamp="1581731750550">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state width="2467" height="271" key="GridCell.Tab.0.center/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581645987491" />
+    <state width="2467" height="271" key="GridCell.Tab.0.center/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581731750550" />
     <state width="1577" height="275" key="GridCell.Tab.0.center/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
-    <state width="2467" height="271" key="GridCell.Tab.0.left" timestamp="1581645987491">
+    <state width="2467" height="271" key="GridCell.Tab.0.left" timestamp="1581731750550">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state width="2467" height="271" key="GridCell.Tab.0.left/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581645987491" />
+    <state width="2467" height="271" key="GridCell.Tab.0.left/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581731750550" />
     <state width="1577" height="275" key="GridCell.Tab.0.left/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
-    <state width="2467" height="271" key="GridCell.Tab.0.right" timestamp="1581645987491">
+    <state width="2467" height="271" key="GridCell.Tab.0.right" timestamp="1581731750551">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state width="2467" height="271" key="GridCell.Tab.0.right/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581645987491" />
+    <state width="2467" height="271" key="GridCell.Tab.0.right/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581731750551" />
     <state width="1577" height="275" key="GridCell.Tab.0.right/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@4000.180.1600.900" timestamp="1579381729771" />
     <state x="2495" y="185" width="1022" height="737" key="SettingsEditor" timestamp="1579454309708">
       <screen x="1440" y="0" width="2560" height="1080" />
@@ -277,9 +248,9 @@
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
     <state x="2419" y="252" key="run.anything.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1580077423297" />
-    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581264067519">
+    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581732946871">
       <screen x="1440" y="0" width="2560" height="1080" />
     </state>
-    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581264067519" />
+    <state x="2418" y="259" width="672" height="678" key="search.everywhere.popup/1440.0.2560.1080/4000.180.1600.900/0.180.1440.900@1440.0.2560.1080" timestamp="1581732946871" />
   </component>
 </project>

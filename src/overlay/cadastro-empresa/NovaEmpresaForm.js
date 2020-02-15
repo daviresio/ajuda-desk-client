@@ -20,7 +20,7 @@ import {
     salvarEmpresa
 } from "../../store/actions/empresa-actions";
 import {closePanelCadastroEmpresa} from "../../store/actions/panel-actions";
-import {prepareFormObj} from "../../util/util";
+import {replaceNullValues} from "../../util/util";
 
 
 const validadeSchema = Yup.object().shape({
@@ -80,7 +80,8 @@ const NovaEmpresaForm = ({scores, tipoPlanos, dataRenovacoes, tipoEmpresas, clos
                         initialValues={initialValues}
                         validationSchema={validadeSchema}
                         enableReinitialize={true}
-                        onSubmit={(values, {setSubmiting}) => {
+                        onSubmit={({anotacao, ...values}, {setSubmiting}) => {
+                            values.anotacoes = [{conteudo: anotacao}]
                             values.id ? editar(values) : salvar(values)
                         }}
                     >
@@ -153,7 +154,7 @@ const mapStateToProps = ({apiData, panel}) => ({
     dataRenovacoes: apiData.dataRenovacoes,
     tipoEmpresas: apiData.tipoEmpresas,
     id: panel.cadastroEmpresa.id,
-    empresa: prepareFormObj(apiData.empresa),
+    empresa: {...replaceNullValues(apiData.empresa), anotacao: apiData.empresa.anotacoes && apiData.empresa.anotacoes[0] ? apiData.empresa.anotacoes[0] : ''},
 })
 
 const mapDispatchToProps = dispatch => ({
