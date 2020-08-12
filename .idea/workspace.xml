@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="fb1a1b01-e6f3-46da-9077-90159a533748" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/empresa/anotacao.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printscrenns/printscreen_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printscrenns/printscreen_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printscrenns/printscreen_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printscrenns/printscreen_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printscrenns/printscreen_5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Linq.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Linq.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overlay/cadastro-empresa/NovaEmpresaForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/overlay/cadastro-empresa/NovaEmpresaForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/empresa/EmpresaPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/EmpresaPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/empresa/child-routes/Anotacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/empresa/child-routes/Anotacao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/empresa-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/empresa-actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/api-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/api-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/anotacao-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/anotacao-saga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/empresa-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/empresa-saga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/pages/_empresa_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/pages/_empresa_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +62,11 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -74,19 +84,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/printscrenns" />
+      <recent name="$PROJECT_DIR$/src/components/table" />
+      <recent name="$PROJECT_DIR$/src/store/sagas" />
+      <recent name="$PROJECT_DIR$/src/pages/empresa" />
+      <recent name="$PROJECT_DIR$/src/overlay/novo-contato" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/store/sagas" />
       <recent name="$PROJECT_DIR$/src/store/actions" />
       <recent name="$PROJECT_DIR$/src/overlay" />
       <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/components/form" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/table" />
-      <recent name="$PROJECT_DIR$/src/store/sagas" />
-      <recent name="$PROJECT_DIR$/src/pages/empresa" />
-      <recent name="$PROJECT_DIR$/src/overlay/novo-contato" />
-      <recent name="$PROJECT_DIR$/src/store/actions" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -123,18 +133,6 @@
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -192,11 +190,23 @@
       <workItem from="1581714145631" duration="8331000" />
       <workItem from="1581764753908" duration="7000" />
       <workItem from="1581778681439" duration="13142000" />
+      <workItem from="1597201895847" duration="624000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="2213" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579391515727">
